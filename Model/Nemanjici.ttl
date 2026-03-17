@@ -1,0 +1,444 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace/> .
+@prefix nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#> .
+@prefix ext: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix uml: <http://langdale.com.au/2005/UML#> .
+@prefix tc57: <http://iec.ch/TC57/> .
+
+nemanjicischema:TipVladara a rdfs:Class ;
+	rdfs:label "#TipVladara" ;
+	ext:stereotype uml:enumeration .
+
+nemanjicischema:TipVladara.Car a nemanjicischema:TipVladara ;
+	rdfs:label "Car" .
+
+nemanjicischema:TipVladara.Despot a nemanjicischema:TipVladara ;
+	rdfs:label "Despot" .
+
+nemanjicischema:TipVladara.Knez a nemanjicischema:TipVladara ;
+	rdfs:label "Knez" .
+
+nemanjicischema:TipVladara.Kralj a nemanjicischema:TipVladara ;
+	rdfs:label "Kralj" .
+
+nemanjicischema:TipVladara.VelikaZupan a nemanjicischema:TipVladara ;
+	rdfs:label "VelikaZupan" .
+
+nemanjicischema:TipTeritorije a rdfs:Class ;
+	rdfs:label "#TipTeritorije" ;
+	ext:stereotype uml:enumeration .
+
+nemanjicischema:TipTeritorije.Carstvo a nemanjicischema:TipTeritorije ;
+	rdfs:label "Carstvo" .
+
+nemanjicischema:TipTeritorije.Kraljevina a nemanjicischema:TipTeritorije ;
+	rdfs:label "Kraljevina" .
+
+nemanjicischema:TipTeritorije.Oblast a nemanjicischema:TipTeritorije ;
+	rdfs:label "Oblast" .
+
+nemanjicischema:TipTeritorije.Zupa a nemanjicischema:TipTeritorije ;
+	rdfs:label "Zupa" .
+
+nemanjicischema:TipTeritorije.Zupanija a nemanjicischema:TipTeritorije ;
+	rdfs:label "Zupanija" .
+
+nemanjicischema:TipCrkve a rdfs:Class ;
+	rdfs:label "#TipCrkve" ;
+	ext:stereotype uml:enumeration .
+
+nemanjicischema:TipCrkve.Crkva a nemanjicischema:TipCrkve ;
+	rdfs:label "Crkva" .
+
+nemanjicischema:TipCrkve.Manastir a nemanjicischema:TipCrkve ;
+	rdfs:label "Manastir" .
+
+nemanjicischema:Osoba a rdfs:Class ;
+	rdfs:label "#Osoba" .
+
+nemanjicischema:Osoba.ime a rdf:Property ;
+	rdfs:label "ime" ;
+	rdfs:domain nemanjicischema:Osoba ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Osoba.godinaRodjenja a rdf:Property ;
+	rdfs:label "godinaRodjenja" ;
+	rdfs:domain nemanjicischema:Osoba ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Osoba.godinaSmrti a rdf:Property ;
+	rdfs:label "godinaSmrti" ;
+	rdfs:domain nemanjicischema:Osoba ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Vladar a rdfs:Class ;
+	rdfs:label "#Vladar" ;
+	rdfs:subClassOf nemanjicischema:Osoba .
+
+nemanjicischema:Vladar.titula a rdf:Property ;
+	rdfs:label "titula" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	rdfs:range nemanjicischema:TipVladara ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Vladar.vladaoOd a rdf:Property ;
+	rdfs:label "vladaoOd" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Vladar.vladaoDo a rdf:Property ;
+	rdfs:label "vladaoDo" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Vladar.nasljednik a rdf:Property ;
+	rdfs:label "nasljednik" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:0..1 .
+
+nemanjicischema:Vladar.vladaoTeritorijom a rdf:Property ;
+	rdfs:label "vladaoTeritorijom" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	rdfs:range nemanjicischema:Teritorija ;
+	ext:multiplicity ext:M:0..n ;
+	ext:inverseRoleName nemanjicischema:Teritorija.vladao .
+
+nemanjicischema:Vladar.vladaoDrzavom a rdf:Property ;
+	rdfs:label "vladaoDrzavom" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	rdfs:range nemanjicischema:Drzava ;
+	ext:multiplicity ext:M:0..1 ;
+	ext:inverseRoleName nemanjicischema:Drzava.vladari .
+
+nemanjicischema:Vladar.ucestvovaoUBitki a rdf:Property ;
+	rdfs:label "ucestvovaoUBitki" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	rdfs:range nemanjicischema:Bitka ;
+	ext:multiplicity ext:M:0..n ;
+	ext:inverseRoleName nemanjicischema:Bitka.ucestvovao .
+
+nemanjicischema:Vladar.izgradioManastir a rdf:Property ;
+	rdfs:label "izgradioManastir" ;
+	rdfs:domain nemanjicischema:Vladar ;
+	rdfs:range nemanjicischema:Crkva ;
+	ext:multiplicity ext:M:0..n ;
+	ext:inverseRoleName nemanjicischema:Crkva.ktitor .
+
+nemanjicischema:Svestenik a rdfs:Class ;
+	rdfs:label "#Svestenik" ;
+	rdfs:subClassOf nemanjicischema:Osoba .
+
+nemanjicischema:Svestenik.crkvenaFunkcija a rdf:Property ;
+	rdfs:label "crkvenaFunkcija" ;
+	rdfs:domain nemanjicischema:Svestenik ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Svestenik.upravljaManastirom a rdf:Property ;
+	rdfs:label "upravljaManastirom" ;
+	rdfs:domain nemanjicischema:Svestenik ;
+	rdfs:range nemanjicischema:Crkva ;
+	ext:multiplicity ext:M:0..1 ;
+	ext:inverseRoleName nemanjicischema:Crkva.upravnik .
+
+nemanjicischema:Plemic a rdfs:Class ;
+	rdfs:label "#Plemic" ;
+	rdfs:subClassOf nemanjicischema:Osoba .
+
+nemanjicischema:Plemic.zvanje a rdf:Property ;
+	rdfs:label "zvanje" ;
+	rdfs:domain nemanjicischema:Plemic ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Plemic.upravljaTeritorijom a rdf:Property ;
+	rdfs:label "upravljaTeritorijom" ;
+	rdfs:domain nemanjicischema:Plemic ;
+	rdfs:range nemanjicischema:Teritorija ;
+	ext:multiplicity ext:M:0..n .
+
+nemanjicischema:Dinastija a rdfs:Class ;
+	rdfs:label "#Dinastija" .
+
+nemanjicischema:Dinastija.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Dinastija ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Dinastija.godinaOsnivanja a rdf:Property ;
+	rdfs:label "godinaOsnivanja" ;
+	rdfs:domain nemanjicischema:Dinastija ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Dinastija.godinaGasenja a rdf:Property ;
+	rdfs:label "godinaGasenja" ;
+	rdfs:domain nemanjicischema:Dinastija ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Dinastija.osnivac a rdf:Property ;
+	rdfs:label "osnivac" ;
+	rdfs:domain nemanjicischema:Dinastija ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:1 .
+
+nemanjicischema:Drzava a rdfs:Class ;
+	rdfs:label "#Drzava" .
+
+nemanjicischema:Drzava.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Drzava ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Drzava.tipTeritorije a rdf:Property ;
+	rdfs:label "tipTeritorije" ;
+	rdfs:domain nemanjicischema:Drzava ;
+	rdfs:range nemanjicischema:TipTeritorije ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Drzava.godinaOsnivanja a rdf:Property ;
+	rdfs:label "godinaOsnivanja" ;
+	rdfs:domain nemanjicischema:Drzava ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Drzava.vladajucaDinastija a rdf:Property ;
+	rdfs:label "vladajucaDinastija" ;
+	rdfs:domain nemanjicischema:Drzava ;
+	rdfs:range nemanjicischema:Dinastija ;
+	ext:multiplicity ext:M:1 .
+
+nemanjicischema:Drzava.vladari a rdf:Property ;
+	rdfs:label "vladari" ;
+	rdfs:domain nemanjicischema:Drzava ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:0..n ;
+	ext:inverseRoleName nemanjicischema:Vladar.vladaoDrzavom .
+
+nemanjicischema:Teritorija a rdfs:Class ;
+	rdfs:label "#Teritorija" .
+
+nemanjicischema:Teritorija.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Teritorija ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Teritorija.tipTeritorije a rdf:Property ;
+	rdfs:label "tipTeritorije" ;
+	rdfs:domain nemanjicischema:Teritorija ;
+	rdfs:range nemanjicischema:TipTeritorije ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Teritorija.dioOd a rdf:Property ;
+	rdfs:label "dioOd" ;
+	rdfs:domain nemanjicischema:Teritorija ;
+	rdfs:range nemanjicischema:Drzava ;
+	ext:multiplicity ext:M:1 .
+
+nemanjicischema:Teritorija.vladao a rdf:Property ;
+	rdfs:label "vladao" ;
+	rdfs:domain nemanjicischema:Teritorija ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:0..n ;
+	ext:inverseRoleName nemanjicischema:Vladar.vladaoTeritorijom .
+
+nemanjicischema:Bitka a rdfs:Class ;
+	rdfs:label "#Bitka" .
+
+nemanjicischema:Bitka.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Bitka ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Bitka.godina a rdf:Property ;
+	rdfs:label "godina" ;
+	rdfs:domain nemanjicischema:Bitka ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Bitka.lokacija a rdf:Property ;
+	rdfs:label "lokacija" ;
+	rdfs:domain nemanjicischema:Bitka ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Bitka.pobjednik a rdf:Property ;
+	rdfs:label "pobjednik" ;
+	rdfs:domain nemanjicischema:Bitka ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:0..1 .
+
+nemanjicischema:Bitka.ucestvovao a rdf:Property ;
+	rdfs:label "ucestvovao" ;
+	rdfs:domain nemanjicischema:Bitka ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:0..n ;
+	ext:inverseRoleName nemanjicischema:Vladar.ucestvovaoUBitki .
+
+nemanjicischema:PravniDokument a rdfs:Class ;
+	rdfs:label "#PravniDokument" .
+
+nemanjicischema:PravniDokument.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:PravniDokument ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:PravniDokument.godinaDonosenja a rdf:Property ;
+	rdfs:label "godinaDonosenja" ;
+	rdfs:domain nemanjicischema:PravniDokument ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:PravniDokument.opis a rdf:Property ;
+	rdfs:label "opis" ;
+	rdfs:domain nemanjicischema:PravniDokument ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:PravniDokument.donosilac a rdf:Property ;
+	rdfs:label "donosilac" ;
+	rdfs:domain nemanjicischema:PravniDokument ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:1 .
+
+nemanjicischema:Ugovor a rdfs:Class ;
+	rdfs:label "#Ugovor" .
+
+nemanjicischema:Ugovor.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Ugovor ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Ugovor.godinaSklapanja a rdf:Property ;
+	rdfs:label "godinaSklapanja" ;
+	rdfs:domain nemanjicischema:Ugovor ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Ugovor.potpisnik a rdf:Property ;
+	rdfs:label "potpisnik" ;
+	rdfs:domain nemanjicischema:Ugovor ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:0..n .
+
+nemanjicischema:Crkva a rdfs:Class ;
+	rdfs:label "#Crkva" .
+
+nemanjicischema:Crkva.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Crkva ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Crkva.tipCrkve a rdf:Property ;
+	rdfs:label "tipCrkve" ;
+	rdfs:domain nemanjicischema:Crkva ;
+	rdfs:range nemanjicischema:TipCrkve ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Crkva.godinaGradnje a rdf:Property ;
+	rdfs:label "godinaGradnje" ;
+	rdfs:domain nemanjicischema:Crkva ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Crkva.ktitor a rdf:Property ;
+	rdfs:label "ktitor" ;
+	rdfs:domain nemanjicischema:Crkva ;
+	rdfs:range nemanjicischema:Vladar ;
+	ext:multiplicity ext:M:1 ;
+	ext:inverseRoleName nemanjicischema:Vladar.izgradioManastir .
+
+nemanjicischema:Crkva.lokacija a rdf:Property ;
+	rdfs:label "lokacija" ;
+	rdfs:domain nemanjicischema:Crkva ;
+	rdfs:range nemanjicischema:Teritorija ;
+	ext:multiplicity ext:M:1 .
+
+nemanjicischema:Crkva.upravnik a rdf:Property ;
+	rdfs:label "upravnik" ;
+	rdfs:domain nemanjicischema:Crkva ;
+	rdfs:range nemanjicischema:Svestenik ;
+	ext:multiplicity ext:M:0..1 ;
+	ext:inverseRoleName nemanjicischema:Svestenik.upravljaManastirom .
+
+nemanjicischema:Grad a rdfs:Class ;
+	rdfs:label "#Grad" .
+
+nemanjicischema:Grad.naziv a rdf:Property ;
+	rdfs:label "naziv" ;
+	rdfs:domain nemanjicischema:Grad ;
+	ext:dataType xsd:string ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Grad.godinaOsnivanja a rdf:Property ;
+	rdfs:label "godinaOsnivanja" ;
+	rdfs:domain nemanjicischema:Grad ;
+	ext:dataType xsd:int ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Grad.jePrestonica a rdf:Property ;
+	rdfs:label "jePrestonica" ;
+	rdfs:domain nemanjicischema:Grad ;
+	ext:dataType xsd:boolean ;
+	ext:multiplicity ext:M:1 ;
+	ext:stereotype uml:attribute .
+
+nemanjicischema:Grad.teritorija a rdf:Property ;
+	rdfs:label "teritorija" ;
+	rdfs:domain nemanjicischema:Grad ;
+	rdfs:range nemanjicischema:Teritorija ;
+	ext:multiplicity ext:M:1 .
+
+tc57:TipVladara a rdfs:Class ;
+	rdfs:label "TipVladara" .
+
+tc57:TipTeritorije a rdfs:Class ;
+	rdfs:label "TipTeritorije" .
+
+tc57:TipCrkve a rdfs:Class ;
+	rdfs:label "TipCrkve" .
