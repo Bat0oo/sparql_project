@@ -1,0 +1,98 @@
+@prefix : <http://nemanjici.ontologija.sr#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix uml: <http://langdale.com.au/2005/UML#> .
+
+:TipVladara a rdfs:Class ; rdfs:label "TipVladara" ; cims:stereotype uml:enumeration .
+:TipVladara.Car a :TipVladara ; rdfs:label "Car" .
+:TipVladara.Despot a :TipVladara ; rdfs:label "Despot" .
+:TipVladara.Knez a :TipVladara ; rdfs:label "Knez" .
+:TipVladara.Kralj a :TipVladara ; rdfs:label "Kralj" .
+:TipVladara.VelikaZupan a :TipVladara ; rdfs:label "VelikaZupan" .
+
+:TipTeritorije a rdfs:Class ; rdfs:label "TipTeritorije" ; cims:stereotype uml:enumeration .
+:TipTeritorije.Carstvo a :TipTeritorije ; rdfs:label "Carstvo" .
+:TipTeritorije.Kraljevina a :TipTeritorije ; rdfs:label "Kraljevina" .
+:TipTeritorije.Oblast a :TipTeritorije ; rdfs:label "Oblast" .
+:TipTeritorije.Zupa a :TipTeritorije ; rdfs:label "Zupa" .
+:TipTeritorije.Zupanija a :TipTeritorije ; rdfs:label "Zupanija" .
+
+:TipCrkve a rdfs:Class ; rdfs:label "TipCrkve" ; cims:stereotype uml:enumeration .
+:TipCrkve.Crkva a :TipCrkve ; rdfs:label "Crkva" .
+:TipCrkve.Manastir a :TipCrkve ; rdfs:label "Manastir" .
+
+:Osoba a rdfs:Class ; rdfs:label "Osoba" .
+:Osoba.ime a rdf:Property ; rdfs:label "ime" ; rdfs:domain :Osoba ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Osoba.godinaRodjenja a rdf:Property ; rdfs:label "godinaRodjenja" ; rdfs:domain :Osoba ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Osoba.godinaSmrti a rdf:Property ; rdfs:label "godinaSmrti" ; rdfs:domain :Osoba ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+
+:Vladar a rdfs:Class ; rdfs:label "Vladar" ; rdfs:subClassOf :Osoba .
+:Vladar.titula a rdf:Property ; rdfs:label "titula" ; rdfs:domain :Vladar ; rdfs:range :TipVladara ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Vladar.vladaoOd a rdf:Property ; rdfs:label "vladaoOd" ; rdfs:domain :Vladar ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Vladar.vladaoDo a rdf:Property ; rdfs:label "vladaoDo" ; rdfs:domain :Vladar ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Vladar.nasljednik a rdf:Property ; rdfs:label "nasljednik" ; rdfs:domain :Vladar ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..1 .
+:Vladar.vladaoTeritorijom a rdf:Property ; rdfs:label "vladaoTeritorijom" ; rdfs:domain :Vladar ; rdfs:range :Teritorija ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Teritorija.vladao .
+:Vladar.vladaoDrzavom a rdf:Property ; rdfs:label "vladaoDrzavom" ; rdfs:domain :Vladar ; rdfs:range :Drzava ; cims:multiplicity cims:M:0..1 ; cims:inverseRoleName :Drzava.vladari .
+:Vladar.ucestvovaoUBitki a rdf:Property ; rdfs:label "ucestvovaoUBitki" ; rdfs:domain :Vladar ; rdfs:range :Bitka ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Bitka.ucestvovao .
+:Vladar.izgradioManastir a rdf:Property ; rdfs:label "izgradioManastir" ; rdfs:domain :Vladar ; rdfs:range :Crkva ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Crkva.ktitor .
+
+:Svestenik a rdfs:Class ; rdfs:label "Svestenik" ; rdfs:subClassOf :Osoba .
+:Svestenik.crkvenaFunkcija a rdf:Property ; rdfs:label "crkvenaFunkcija" ; rdfs:domain :Svestenik ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Svestenik.upravljaManastirom a rdf:Property ; rdfs:label "upravljaManastirom" ; rdfs:domain :Svestenik ; rdfs:range :Crkva ; cims:multiplicity cims:M:0..1 ; cims:inverseRoleName :Crkva.upravnik .
+
+:Plemic a rdfs:Class ; rdfs:label "Plemic" ; rdfs:subClassOf :Osoba .
+:Plemic.zvanje a rdf:Property ; rdfs:label "zvanje" ; rdfs:domain :Plemic ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Plemic.upravljaTeritorijom a rdf:Property ; rdfs:label "upravljaTeritorijom" ; rdfs:domain :Plemic ; rdfs:range :Teritorija ; cims:multiplicity cims:M:0..n .
+
+:Dinastija a rdfs:Class ; rdfs:label "Dinastija" .
+:Dinastija.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Dinastija ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Dinastija.godinaOsnivanja a rdf:Property ; rdfs:label "godinaOsnivanja" ; rdfs:domain :Dinastija ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Dinastija.godinaGasenja a rdf:Property ; rdfs:label "godinaGasenja" ; rdfs:domain :Dinastija ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Dinastija.osnivac a rdf:Property ; rdfs:label "osnivac" ; rdfs:domain :Dinastija ; rdfs:range :Vladar ; cims:multiplicity cims:M:1 .
+
+:Drzava a rdfs:Class ; rdfs:label "Drzava" .
+:Drzava.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Drzava ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Drzava.tipTeritorije a rdf:Property ; rdfs:label "tipTeritorije" ; rdfs:domain :Drzava ; rdfs:range :TipTeritorije ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Drzava.godinaOsnivanja a rdf:Property ; rdfs:label "godinaOsnivanja" ; rdfs:domain :Drzava ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Drzava.vladajucaDinastija a rdf:Property ; rdfs:label "vladajucaDinastija" ; rdfs:domain :Drzava ; rdfs:range :Dinastija ; cims:multiplicity cims:M:1 .
+:Drzava.vladari a rdf:Property ; rdfs:label "vladari" ; rdfs:domain :Drzava ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Vladar.vladaoDrzavom .
+
+:Teritorija a rdfs:Class ; rdfs:label "Teritorija" .
+:Teritorija.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Teritorija ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Teritorija.tipTeritorije a rdf:Property ; rdfs:label "tipTeritorije" ; rdfs:domain :Teritorija ; rdfs:range :TipTeritorije ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Teritorija.dioOd a rdf:Property ; rdfs:label "dioOd" ; rdfs:domain :Teritorija ; rdfs:range :Drzava ; cims:multiplicity cims:M:1 .
+:Teritorija.vladao a rdf:Property ; rdfs:label "vladao" ; rdfs:domain :Teritorija ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Vladar.vladaoTeritorijom .
+
+:Bitka a rdfs:Class ; rdfs:label "Bitka" .
+:Bitka.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Bitka ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Bitka.godina a rdf:Property ; rdfs:label "godina" ; rdfs:domain :Bitka ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Bitka.lokacija a rdf:Property ; rdfs:label "lokacija" ; rdfs:domain :Bitka ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Bitka.pobjednik a rdf:Property ; rdfs:label "pobjednik" ; rdfs:domain :Bitka ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..1 .
+:Bitka.ucestvovao a rdf:Property ; rdfs:label "ucestvovao" ; rdfs:domain :Bitka ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Vladar.ucestvovaoUBitki .
+
+:PravniDokument a rdfs:Class ; rdfs:label "PravniDokument" .
+:PravniDokument.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :PravniDokument ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:PravniDokument.godinaDonosenja a rdf:Property ; rdfs:label "godinaDonosenja" ; rdfs:domain :PravniDokument ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:PravniDokument.opis a rdf:Property ; rdfs:label "opis" ; rdfs:domain :PravniDokument ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:PravniDokument.donosilac a rdf:Property ; rdfs:label "donosilac" ; rdfs:domain :PravniDokument ; rdfs:range :Vladar ; cims:multiplicity cims:M:1 .
+
+:Ugovor a rdfs:Class ; rdfs:label "Ugovor" .
+:Ugovor.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Ugovor ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Ugovor.godinaSklapanja a rdf:Property ; rdfs:label "godinaSklapanja" ; rdfs:domain :Ugovor ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Ugovor.potpisnik a rdf:Property ; rdfs:label "potpisnik" ; rdfs:domain :Ugovor ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n .
+
+:Crkva a rdfs:Class ; rdfs:label "Crkva" .
+:Crkva.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Crkva ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Crkva.tipCrkve a rdf:Property ; rdfs:label "tipCrkve" ; rdfs:domain :Crkva ; rdfs:range :TipCrkve ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Crkva.godinaGradnje a rdf:Property ; rdfs:label "godinaGradnje" ; rdfs:domain :Crkva ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Crkva.ktitor a rdf:Property ; rdfs:label "ktitor" ; rdfs:domain :Crkva ; rdfs:range :Vladar ; cims:multiplicity cims:M:1 ; cims:inverseRoleName :Vladar.izgradioManastir .
+:Crkva.lokacija a rdf:Property ; rdfs:label "lokacija" ; rdfs:domain :Crkva ; rdfs:range :Teritorija ; cims:multiplicity cims:M:1 .
+:Crkva.upravnik a rdf:Property ; rdfs:label "upravnik" ; rdfs:domain :Crkva ; rdfs:range :Svestenik ; cims:multiplicity cims:M:0..1 ; cims:inverseRoleName :Svestenik.upravljaManastirom .
+
+:Grad a rdfs:Class ; rdfs:label "Grad" .
+:Grad.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Grad ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Grad.godinaOsnivanja a rdf:Property ; rdfs:label "godinaOsnivanja" ; rdfs:domain :Grad ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Grad.jePrestonica a rdf:Property ; rdfs:label "jePrestonica" ; rdfs:domain :Grad ; cims:dataType xsd:boolean ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+:Grad.teritorija a rdf:Property ; rdfs:label "teritorija" ; rdfs:domain :Grad ; rdfs:range :Teritorija ; cims:multiplicity cims:M:1 .
