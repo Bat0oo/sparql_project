@@ -1,17 +1,18 @@
-#title: DBpedia - Srednjovjekovne bitke u Srbiji
-#comment: Endpoint: https://dbpedia.org/sparql
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dct: <http://purl.org/dc/terms/>
+#title: Wikidata - Bitke u kojima je ucestvovala Srbija
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?bitka ?ime ?godina
+SELECT ?bitka ?ime ?datum
 WHERE {
-    ?bitka a dbo:MilitaryConflict ;
-           rdfs:label ?ime ;
-           dbo:date ?datum .
-    ?bitka dct:subject <http://dbpedia.org/resource/Category:Medieval_Serbia> .
-    BIND(YEAR(?datum) AS ?godina)
+    ?bitka wdt:P31 wd:Q178561 ;
+           rdfs:label ?ime .
+    { ?bitka wdt:P710 ?ucesnik . ?ucesnik wdt:P17 wd:Q403 . }
+    UNION
+    { ?bitka wdt:P17 wd:Q403 }
+    OPTIONAL { ?bitka wdt:P585 ?datum }
     FILTER (lang(?ime) = "en")
 }
-ORDER BY ?godina
-LIMIT 15
+ORDER BY ?datum
+LIMIT 20

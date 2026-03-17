@@ -1,15 +1,17 @@
-#title: DBpedia - Pravoslavni manastiri u Srbiji
-#comment: Endpoint: https://dbpedia.org/sparql
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbr: <http://dbpedia.org/resource/>
+#title: Wikidata - Srpske srednjovjekovne drzave
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?manastir ?ime
+SELECT ?drzava ?ime ?pocetak ?kraj
 WHERE {
-    ?manastir a dbo:ReligiousBuilding ;
-              rdfs:label ?ime ;
-              dbo:location dbr:Serbia .
+    ?drzava wdt:P31 wd:Q3024240 ;
+            rdfs:label ?ime .
+    OPTIONAL { ?drzava wdt:P571 ?pocetak }
+    OPTIONAL { ?drzava wdt:P576 ?kraj }
+    ?drzava wdt:P17 wd:Q403 .
     FILTER (lang(?ime) = "en")
 }
-ORDER BY ?ime
+ORDER BY ?pocetak
 LIMIT 20

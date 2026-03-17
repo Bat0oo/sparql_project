@@ -1,13 +1,20 @@
-#title: DBpedia - Clanovi dinastije Nemanjica
-#comment: Endpoint: https://dbpedia.org/sparql
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbr: <http://dbpedia.org/resource/>
+#title: Wikidata - Osnivaci srpskih manastira
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?osoba ?ime
+SELECT ?manastir ?manastirIme ?osnivacIme
 WHERE {
-    ?osoba dbo:dynasty dbr:Nemanjic_dynasty ;
-           rdfs:label ?ime .
-    FILTER (lang(?ime) = "en")
+    ?manastir wdt:P31 wd:Q44613 ;
+              wdt:P17 wd:Q403 ;
+              rdfs:label ?manastirIme .
+    OPTIONAL {
+        ?manastir wdt:P112 ?osnivac .
+        ?osnivac rdfs:label ?osnivacIme .
+        FILTER (lang(?osnivacIme) = "en")
+    }
+    FILTER (lang(?manastirIme) = "en")
 }
-ORDER BY ?ime
+ORDER BY ?manastirIme
+LIMIT 20

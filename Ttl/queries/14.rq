@@ -1,12 +1,14 @@
-#title: DBpedia - Djeca Stefana Nemanje
-#comment: Endpoint: https://dbpedia.org/sparql
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbr: <http://dbpedia.org/resource/>
+#title: Wikidata - Djeca Stefana Nemanje
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?dijete ?ime
+SELECT ?dijete ?ime ?rodjenje
 WHERE {
-    ?dijete dbo:parent dbr:Stefan_Nemanja ;
+    ?dijete wdt:P22 wd:Q183180 ;
             rdfs:label ?ime .
+    OPTIONAL { ?dijete wdt:P569 ?rodjenje }
     FILTER (lang(?ime) = "en")
 }
+ORDER BY ?rodjenje

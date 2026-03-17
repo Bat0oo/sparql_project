@@ -1,12 +1,19 @@
-#title: DBpedia - Detalji o Stefanu Dusanu
-#comment: Endpoint: https://dbpedia.org/sparql
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbr: <http://dbpedia.org/resource/>
+#title: Wikidata - Srpski vladari iz srednjeg vijeka
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?property ?value
+SELECT ?vladar ?ime ?rodjenje ?smrt
 WHERE {
-    dbr:Stefan_Dusan ?property ?value .
-    FILTER (lang(?value) = "en")
+    ?vladar wdt:P31 wd:Q5 ;
+            wdt:P27 wd:Q403 ;
+            wdt:P39 ?pozicija ;
+            rdfs:label ?ime .
+    ?pozicija wdt:P31*/wdt:P279* wd:Q116 .
+    OPTIONAL { ?vladar wdt:P569 ?rodjenje }
+    OPTIONAL { ?vladar wdt:P570 ?smrt }
+    FILTER (lang(?ime) = "en")
 }
+ORDER BY ?rodjenje
 LIMIT 20
