@@ -1,98 +1,442 @@
-@prefix : <http://nemanjici.ontologija.sr#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix uml: <http://langdale.com.au/2005/UML#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:TipVladara a rdfs:Class ; rdfs:label "TipVladara" ; cims:stereotype uml:enumeration .
-:TipVladara.Car a :TipVladara ; rdfs:label "Car" .
-:TipVladara.Despot a :TipVladara ; rdfs:label "Despot" .
-:TipVladara.Knez a :TipVladara ; rdfs:label "Knez" .
-:TipVladara.Kralj a :TipVladara ; rdfs:label "Kralj" .
-:TipVladara.VelikaZupan a :TipVladara ; rdfs:label "VelikaZupan" .
+<http://iec.ch/TC57/NemanjiciSchema#Bitka> a rdfs:Class ;
+    rdfs:label "#Bitka" .
 
-:TipTeritorije a rdfs:Class ; rdfs:label "TipTeritorije" ; cims:stereotype uml:enumeration .
-:TipTeritorije.Carstvo a :TipTeritorije ; rdfs:label "Carstvo" .
-:TipTeritorije.Kraljevina a :TipTeritorije ; rdfs:label "Kraljevina" .
-:TipTeritorije.Oblast a :TipTeritorije ; rdfs:label "Oblast" .
-:TipTeritorije.Zupa a :TipTeritorije ; rdfs:label "Zupa" .
-:TipTeritorije.Zupanija a :TipTeritorije ; rdfs:label "Zupanija" .
+<http://iec.ch/TC57/NemanjiciSchema#Crkva> a rdfs:Class ;
+    rdfs:label "#Crkva" .
 
-:TipCrkve a rdfs:Class ; rdfs:label "TipCrkve" ; cims:stereotype uml:enumeration .
-:TipCrkve.Crkva a :TipCrkve ; rdfs:label "Crkva" .
-:TipCrkve.Manastir a :TipCrkve ; rdfs:label "Manastir" .
+<http://iec.ch/TC57/NemanjiciSchema#Dinastija> a rdfs:Class ;
+    rdfs:label "#Dinastija" .
 
-:Osoba a rdfs:Class ; rdfs:label "Osoba" .
-:Osoba.ime a rdf:Property ; rdfs:label "ime" ; rdfs:domain :Osoba ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Osoba.godinaRodjenja a rdf:Property ; rdfs:label "godinaRodjenja" ; rdfs:domain :Osoba ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Osoba.godinaSmrti a rdf:Property ; rdfs:label "godinaSmrti" ; rdfs:domain :Osoba ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
+<http://iec.ch/TC57/NemanjiciSchema#Drzava> a rdfs:Class ;
+    rdfs:label "#Drzava" .
 
-:Vladar a rdfs:Class ; rdfs:label "Vladar" ; rdfs:subClassOf :Osoba .
-:Vladar.titula a rdf:Property ; rdfs:label "titula" ; rdfs:domain :Vladar ; rdfs:range :TipVladara ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Vladar.vladaoOd a rdf:Property ; rdfs:label "vladaoOd" ; rdfs:domain :Vladar ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Vladar.vladaoDo a rdf:Property ; rdfs:label "vladaoDo" ; rdfs:domain :Vladar ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Vladar.nasljednik a rdf:Property ; rdfs:label "nasljednik" ; rdfs:domain :Vladar ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..1 .
-:Vladar.vladaoTeritorijom a rdf:Property ; rdfs:label "vladaoTeritorijom" ; rdfs:domain :Vladar ; rdfs:range :Teritorija ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Teritorija.vladao .
-:Vladar.vladaoDrzavom a rdf:Property ; rdfs:label "vladaoDrzavom" ; rdfs:domain :Vladar ; rdfs:range :Drzava ; cims:multiplicity cims:M:0..1 ; cims:inverseRoleName :Drzava.vladari .
-:Vladar.ucestvovaoUBitki a rdf:Property ; rdfs:label "ucestvovaoUBitki" ; rdfs:domain :Vladar ; rdfs:range :Bitka ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Bitka.ucestvovao .
-:Vladar.izgradioManastir a rdf:Property ; rdfs:label "izgradioManastir" ; rdfs:domain :Vladar ; rdfs:range :Crkva ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Crkva.ktitor .
+<http://iec.ch/TC57/NemanjiciSchema#Grad> a rdfs:Class ;
+    rdfs:label "#Grad" .
 
-:Svestenik a rdfs:Class ; rdfs:label "Svestenik" ; rdfs:subClassOf :Osoba .
-:Svestenik.crkvenaFunkcija a rdf:Property ; rdfs:label "crkvenaFunkcija" ; rdfs:domain :Svestenik ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Svestenik.upravljaManastirom a rdf:Property ; rdfs:label "upravljaManastirom" ; rdfs:domain :Svestenik ; rdfs:range :Crkva ; cims:multiplicity cims:M:0..1 ; cims:inverseRoleName :Crkva.upravnik .
+<http://iec.ch/TC57/NemanjiciSchema#Osoba> a rdfs:Class ;
+    rdfs:label "#Osoba" .
 
-:Plemic a rdfs:Class ; rdfs:label "Plemic" ; rdfs:subClassOf :Osoba .
-:Plemic.zvanje a rdf:Property ; rdfs:label "zvanje" ; rdfs:domain :Plemic ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Plemic.upravljaTeritorijom a rdf:Property ; rdfs:label "upravljaTeritorijom" ; rdfs:domain :Plemic ; rdfs:range :Teritorija ; cims:multiplicity cims:M:0..n .
+<http://iec.ch/TC57/NemanjiciSchema#Plemic> a rdfs:Class ;
+    rdfs:label "#Plemic" ;
+    rdfs:subClassOf <http://iec.ch/TC57/NemanjiciSchema#Osoba> .
 
-:Dinastija a rdfs:Class ; rdfs:label "Dinastija" .
-:Dinastija.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Dinastija ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Dinastija.godinaOsnivanja a rdf:Property ; rdfs:label "godinaOsnivanja" ; rdfs:domain :Dinastija ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Dinastija.godinaGasenja a rdf:Property ; rdfs:label "godinaGasenja" ; rdfs:domain :Dinastija ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Dinastija.osnivac a rdf:Property ; rdfs:label "osnivac" ; rdfs:domain :Dinastija ; rdfs:range :Vladar ; cims:multiplicity cims:M:1 .
+<http://iec.ch/TC57/NemanjiciSchema#PravniDokument> a rdfs:Class ;
+    rdfs:label "#PravniDokument" .
 
-:Drzava a rdfs:Class ; rdfs:label "Drzava" .
-:Drzava.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Drzava ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Drzava.tipTeritorije a rdf:Property ; rdfs:label "tipTeritorije" ; rdfs:domain :Drzava ; rdfs:range :TipTeritorije ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Drzava.godinaOsnivanja a rdf:Property ; rdfs:label "godinaOsnivanja" ; rdfs:domain :Drzava ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Drzava.vladajucaDinastija a rdf:Property ; rdfs:label "vladajucaDinastija" ; rdfs:domain :Drzava ; rdfs:range :Dinastija ; cims:multiplicity cims:M:1 .
-:Drzava.vladari a rdf:Property ; rdfs:label "vladari" ; rdfs:domain :Drzava ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Vladar.vladaoDrzavom .
+<http://iec.ch/TC57/NemanjiciSchema#Svestenik> a rdfs:Class ;
+    rdfs:label "#Svestenik" ;
+    rdfs:subClassOf <http://iec.ch/TC57/NemanjiciSchema#Osoba> .
 
-:Teritorija a rdfs:Class ; rdfs:label "Teritorija" .
-:Teritorija.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Teritorija ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Teritorija.tipTeritorije a rdf:Property ; rdfs:label "tipTeritorije" ; rdfs:domain :Teritorija ; rdfs:range :TipTeritorije ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Teritorija.dioOd a rdf:Property ; rdfs:label "dioOd" ; rdfs:domain :Teritorija ; rdfs:range :Drzava ; cims:multiplicity cims:M:1 .
-:Teritorija.vladao a rdf:Property ; rdfs:label "vladao" ; rdfs:domain :Teritorija ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Vladar.vladaoTeritorijom .
+<http://iec.ch/TC57/NemanjiciSchema#Teritorija> a rdfs:Class ;
+    rdfs:label "#Teritorija" .
 
-:Bitka a rdfs:Class ; rdfs:label "Bitka" .
-:Bitka.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Bitka ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Bitka.godina a rdf:Property ; rdfs:label "godina" ; rdfs:domain :Bitka ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Bitka.lokacija a rdf:Property ; rdfs:label "lokacija" ; rdfs:domain :Bitka ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Bitka.pobjednik a rdf:Property ; rdfs:label "pobjednik" ; rdfs:domain :Bitka ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..1 .
-:Bitka.ucestvovao a rdf:Property ; rdfs:label "ucestvovao" ; rdfs:domain :Bitka ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n ; cims:inverseRoleName :Vladar.ucestvovaoUBitki .
+<http://iec.ch/TC57/NemanjiciSchema#TipCrkve> a rdfs:Class ;
+    rdfs:label "#TipCrkve" ;
+    cims:stereotype uml:enumeration .
 
-:PravniDokument a rdfs:Class ; rdfs:label "PravniDokument" .
-:PravniDokument.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :PravniDokument ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:PravniDokument.godinaDonosenja a rdf:Property ; rdfs:label "godinaDonosenja" ; rdfs:domain :PravniDokument ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:PravniDokument.opis a rdf:Property ; rdfs:label "opis" ; rdfs:domain :PravniDokument ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:PravniDokument.donosilac a rdf:Property ; rdfs:label "donosilac" ; rdfs:domain :PravniDokument ; rdfs:range :Vladar ; cims:multiplicity cims:M:1 .
+<http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> a rdfs:Class ;
+    rdfs:label "#TipTeritorije" ;
+    cims:stereotype uml:enumeration .
 
-:Ugovor a rdfs:Class ; rdfs:label "Ugovor" .
-:Ugovor.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Ugovor ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Ugovor.godinaSklapanja a rdf:Property ; rdfs:label "godinaSklapanja" ; rdfs:domain :Ugovor ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Ugovor.potpisnik a rdf:Property ; rdfs:label "potpisnik" ; rdfs:domain :Ugovor ; rdfs:range :Vladar ; cims:multiplicity cims:M:0..n .
+<http://iec.ch/TC57/NemanjiciSchema#TipVladara> a rdfs:Class ;
+    rdfs:label "#TipVladara" ;
+    cims:stereotype uml:enumeration .
 
-:Crkva a rdfs:Class ; rdfs:label "Crkva" .
-:Crkva.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Crkva ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Crkva.tipCrkve a rdf:Property ; rdfs:label "tipCrkve" ; rdfs:domain :Crkva ; rdfs:range :TipCrkve ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Crkva.godinaGradnje a rdf:Property ; rdfs:label "godinaGradnje" ; rdfs:domain :Crkva ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Crkva.ktitor a rdf:Property ; rdfs:label "ktitor" ; rdfs:domain :Crkva ; rdfs:range :Vladar ; cims:multiplicity cims:M:1 ; cims:inverseRoleName :Vladar.izgradioManastir .
-:Crkva.lokacija a rdf:Property ; rdfs:label "lokacija" ; rdfs:domain :Crkva ; rdfs:range :Teritorija ; cims:multiplicity cims:M:1 .
-:Crkva.upravnik a rdf:Property ; rdfs:label "upravnik" ; rdfs:domain :Crkva ; rdfs:range :Svestenik ; cims:multiplicity cims:M:0..1 ; cims:inverseRoleName :Svestenik.upravljaManastirom .
+<http://iec.ch/TC57/NemanjiciSchema#Ugovor> a rdfs:Class ;
+    rdfs:label "#Ugovor" .
 
-:Grad a rdfs:Class ; rdfs:label "Grad" .
-:Grad.naziv a rdf:Property ; rdfs:label "naziv" ; rdfs:domain :Grad ; cims:dataType xsd:string ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Grad.godinaOsnivanja a rdf:Property ; rdfs:label "godinaOsnivanja" ; rdfs:domain :Grad ; cims:dataType xsd:int ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Grad.jePrestonica a rdf:Property ; rdfs:label "jePrestonica" ; rdfs:domain :Grad ; cims:dataType xsd:boolean ; cims:multiplicity cims:M:1 ; cims:stereotype uml:attribute .
-:Grad.teritorija a rdf:Property ; rdfs:label "teritorija" ; rdfs:domain :Grad ; rdfs:range :Teritorija ; cims:multiplicity cims:M:1 .
+<http://iec.ch/TC57/NemanjiciSchema#Vladar> a rdfs:Class ;
+    rdfs:label "#Vladar" ;
+    rdfs:subClassOf <http://iec.ch/TC57/NemanjiciSchema#Osoba> .
+
+<http://iec.ch/TC57/TipCrkve> a rdfs:Class ;
+    rdfs:label "TipCrkve" .
+
+<http://iec.ch/TC57/TipTeritorije> a rdfs:Class ;
+    rdfs:label "TipTeritorije" .
+
+<http://iec.ch/TC57/TipVladara> a rdfs:Class ;
+    rdfs:label "TipVladara" .
+
+<http://iec.ch/TC57/NemanjiciSchema#Bitka.godina> a rdf:Property ;
+    rdfs:label "godina" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Bitka> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Bitka.lokacija> a rdf:Property ;
+    rdfs:label "lokacija" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Bitka> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Bitka.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Bitka> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Bitka.pobjednik> a rdf:Property ;
+    rdfs:label "pobjednik" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Bitka> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Crkva.godinaGradnje> a rdf:Property ;
+    rdfs:label "godinaGradnje" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Crkva> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Crkva.lokacija> a rdf:Property ;
+    rdfs:label "lokacija" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Crkva> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Teritorija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Crkva.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Crkva> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Crkva.tipCrkve> a rdf:Property ;
+    rdfs:label "tipCrkve" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Crkva> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#TipCrkve> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Dinastija.godinaGasenja> a rdf:Property ;
+    rdfs:label "godinaGasenja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Dinastija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Dinastija.godinaOsnivanja> a rdf:Property ;
+    rdfs:label "godinaOsnivanja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Dinastija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Dinastija.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Dinastija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Dinastija.osnivac> a rdf:Property ;
+    rdfs:label "osnivac" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Dinastija> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Drzava.godinaOsnivanja> a rdf:Property ;
+    rdfs:label "godinaOsnivanja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Drzava> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Drzava.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Drzava> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Drzava.tipTeritorije> a rdf:Property ;
+    rdfs:label "tipTeritorije" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Drzava> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Drzava.vladajucaDinastija> a rdf:Property ;
+    rdfs:label "vladajucaDinastija" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Drzava> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Dinastija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Grad.godinaOsnivanja> a rdf:Property ;
+    rdfs:label "godinaOsnivanja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Grad> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Grad.jePrestonica> a rdf:Property ;
+    rdfs:label "jePrestonica" ;
+    cims:dataType xsd:boolean ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Grad> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Grad.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Grad> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Grad.teritorija> a rdf:Property ;
+    rdfs:label "teritorija" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Grad> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Teritorija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Osoba.godinaRodjenja> a rdf:Property ;
+    rdfs:label "godinaRodjenja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Osoba> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Osoba.godinaSmrti> a rdf:Property ;
+    rdfs:label "godinaSmrti" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Osoba> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Osoba.ime> a rdf:Property ;
+    rdfs:label "ime" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Osoba> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Plemic.upravljaTeritorijom> a rdf:Property ;
+    rdfs:label "upravljaTeritorijom" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Plemic> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Teritorija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Plemic.zvanje> a rdf:Property ;
+    rdfs:label "zvanje" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Plemic> .
+
+<http://iec.ch/TC57/NemanjiciSchema#PravniDokument.donosilac> a rdf:Property ;
+    rdfs:label "donosilac" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#PravniDokument> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#PravniDokument.godinaDonosenja> a rdf:Property ;
+    rdfs:label "godinaDonosenja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#PravniDokument> .
+
+<http://iec.ch/TC57/NemanjiciSchema#PravniDokument.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#PravniDokument> .
+
+<http://iec.ch/TC57/NemanjiciSchema#PravniDokument.opis> a rdf:Property ;
+    rdfs:label "opis" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#PravniDokument> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Svestenik.crkvenaFunkcija> a rdf:Property ;
+    rdfs:label "crkvenaFunkcija" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Svestenik> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Teritorija.dioOd> a rdf:Property ;
+    rdfs:label "dioOd" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Teritorija> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Drzava> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Teritorija.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Teritorija> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Teritorija.tipTeritorije> a rdf:Property ;
+    rdfs:label "tipTeritorije" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Teritorija> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipCrkve.Crkva> a <http://iec.ch/TC57/NemanjiciSchema#TipCrkve> ;
+    rdfs:label "Crkva" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipCrkve.Manastir> a <http://iec.ch/TC57/NemanjiciSchema#TipCrkve> ;
+    rdfs:label "Manastir" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipTeritorije.Carstvo> a <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> ;
+    rdfs:label "Carstvo" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipTeritorije.Kraljevina> a <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> ;
+    rdfs:label "Kraljevina" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipTeritorije.Oblast> a <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> ;
+    rdfs:label "Oblast" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipTeritorije.Zupa> a <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> ;
+    rdfs:label "Zupa" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipTeritorije.Zupanija> a <http://iec.ch/TC57/NemanjiciSchema#TipTeritorije> ;
+    rdfs:label "Zupanija" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipVladara.Car> a <http://iec.ch/TC57/NemanjiciSchema#TipVladara> ;
+    rdfs:label "Car" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipVladara.Despot> a <http://iec.ch/TC57/NemanjiciSchema#TipVladara> ;
+    rdfs:label "Despot" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipVladara.Knez> a <http://iec.ch/TC57/NemanjiciSchema#TipVladara> ;
+    rdfs:label "Knez" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipVladara.Kralj> a <http://iec.ch/TC57/NemanjiciSchema#TipVladara> ;
+    rdfs:label "Kralj" .
+
+<http://iec.ch/TC57/NemanjiciSchema#TipVladara.VelikaZupan> a <http://iec.ch/TC57/NemanjiciSchema#TipVladara> ;
+    rdfs:label "VelikaZupan" .
+
+<http://iec.ch/TC57/NemanjiciSchema#Ugovor.godinaSklapanja> a rdf:Property ;
+    rdfs:label "godinaSklapanja" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Ugovor> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Ugovor.naziv> a rdf:Property ;
+    rdfs:label "naziv" ;
+    cims:dataType xsd:string ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Ugovor> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Ugovor.potpisnik> a rdf:Property ;
+    rdfs:label "potpisnik" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Ugovor> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.nasljednik> a rdf:Property ;
+    rdfs:label "nasljednik" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.titula> a rdf:Property ;
+    rdfs:label "titula" ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#TipVladara> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.vladaoDo> a rdf:Property ;
+    rdfs:label "vladaoDo" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.vladaoOd> a rdf:Property ;
+    rdfs:label "vladaoOd" ;
+    cims:dataType xsd:int ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    cims:stereotype uml:attribute ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Bitka.ucestvovao> a rdf:Property ;
+    rdfs:label "ucestvovao" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Vladar.ucestvovaoUBitki> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Bitka> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Crkva.ktitor> a rdf:Property ;
+    rdfs:label "ktitor" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Vladar.izgradioManastir> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Crkva> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Crkva.upravnik> a rdf:Property ;
+    rdfs:label "upravnik" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Svestenik.upravljaManastirom> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Crkva> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Svestenik> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Drzava.vladari> a rdf:Property ;
+    rdfs:label "vladari" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Vladar.vladaoDrzavom> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Drzava> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Svestenik.upravljaManastirom> a rdf:Property ;
+    rdfs:label "upravljaManastirom" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Crkva.upravnik> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Svestenik> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Crkva> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Teritorija.vladao> a rdf:Property ;
+    rdfs:label "vladao" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Vladar.vladaoTeritorijom> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Teritorija> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Vladar> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.izgradioManastir> a rdf:Property ;
+    rdfs:label "izgradioManastir" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Crkva.ktitor> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Crkva> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.ucestvovaoUBitki> a rdf:Property ;
+    rdfs:label "ucestvovaoUBitki" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Bitka.ucestvovao> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Bitka> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.vladaoDrzavom> a rdf:Property ;
+    rdfs:label "vladaoDrzavom" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Drzava.vladari> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Drzava> .
+
+<http://iec.ch/TC57/NemanjiciSchema#Vladar.vladaoTeritorijom> a rdf:Property ;
+    rdfs:label "vladaoTeritorijom" ;
+    cims:inverseRoleName <http://iec.ch/TC57/NemanjiciSchema#Teritorija.vladao> ;
+    cims:multiplicity <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n> ;
+    rdfs:domain <http://iec.ch/TC57/NemanjiciSchema#Vladar> ;
+    rdfs:range <http://iec.ch/TC57/NemanjiciSchema#Teritorija> .
+

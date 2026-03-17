@@ -1,0 +1,6 @@
+@prefix : <http://iec.ch/TC57/NemanjiciSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix uml: <http://langdale.com.au/2005/UML#> .

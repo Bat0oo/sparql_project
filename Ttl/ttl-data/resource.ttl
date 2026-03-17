@@ -1,12 +1,11 @@
-@prefix : <http://nemanjici.ontologija.sr#> .
+@prefix : <http://iec.ch/TC57/NemanjiciSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # ================================================================
 # DINASTIJA
 # ================================================================
-:DinastijaNemanjica a :Dinastija ;
+:DinastijaNemanjica rdf:type :Dinastija ;
     :Dinastija.naziv "Nemanjici" ;
     :Dinastija.godinaOsnivanja "1166"^^xsd:int ;
     :Dinastija.godinaGasenja "1371"^^xsd:int ;
@@ -15,19 +14,19 @@
 # ================================================================
 # DRZAVE
 # ================================================================
-:SrpskaVelikaZupanija a :Drzava ;
+:SrpskaVelikaZupanija rdf:type :Drzava ;
     :Drzava.naziv "Srpska Velika Zupanija" ;
     :Drzava.tipTeritorije "Zupanija" ;
     :Drzava.godinaOsnivanja "1091"^^xsd:int ;
     :Drzava.vladajucaDinastija :DinastijaNemanjica .
 
-:KraljevinaSrbija a :Drzava ;
+:KraljevinaSrbija rdf:type :Drzava ;
     :Drzava.naziv "Kraljevina Srbija" ;
     :Drzava.tipTeritorije "Kraljevina" ;
     :Drzava.godinaOsnivanja "1217"^^xsd:int ;
     :Drzava.vladajucaDinastija :DinastijaNemanjica .
 
-:SrpskoCarstvo a :Drzava ;
+:SrpskoCarstvo rdf:type :Drzava ;
     :Drzava.naziv "Srpsko Carstvo" ;
     :Drzava.tipTeritorije "Carstvo" ;
     :Drzava.godinaOsnivanja "1346"^^xsd:int ;
@@ -36,27 +35,27 @@
 # ================================================================
 # TERITORIJE
 # ================================================================
-:TerRaska a :Teritorija ;
+:TerRaska rdf:type :Teritorija ;
     :Teritorija.naziv "Raska" ;
     :Teritorija.tipTeritorije "Zupanija" ;
     :Teritorija.dioOd :SrpskaVelikaZupanija .
 
-:TerZeta a :Teritorija ;
+:TerZeta rdf:type :Teritorija ;
     :Teritorija.naziv "Zeta" ;
     :Teritorija.tipTeritorije "Oblast" ;
     :Teritorija.dioOd :KraljevinaSrbija .
 
-:TerMacedonia a :Teritorija ;
+:TerMacedonia rdf:type :Teritorija ;
     :Teritorija.naziv "Makedonija" ;
     :Teritorija.tipTeritorije "Oblast" ;
     :Teritorija.dioOd :SrpskoCarstvo .
 
-:TerKosovo a :Teritorija ;
+:TerKosovo rdf:type :Teritorija ;
     :Teritorija.naziv "Kosovo" ;
     :Teritorija.tipTeritorije "Oblast" ;
     :Teritorija.dioOd :KraljevinaSrbija .
 
-:TerHum a :Teritorija ;
+:TerHum rdf:type :Teritorija ;
     :Teritorija.naziv "Hum" ;
     :Teritorija.tipTeritorije "Oblast" ;
     :Teritorija.dioOd :KraljevinaSrbija .
@@ -64,7 +63,7 @@
 # ================================================================
 # VLADARI
 # ================================================================
-:StefanNemanja a :Vladar ;
+:StefanNemanja rdf:type :Vladar ;
     :Osoba.ime "Stefan Nemanja" ;
     :Osoba.godinaRodjenja "1113"^^xsd:int ;
     :Osoba.godinaSmrti "1199"^^xsd:int ;
@@ -75,7 +74,7 @@
     :Vladar.vladaoDrzavom :SrpskaVelikaZupanija ;
     :Vladar.vladaoTeritorijom :TerRaska , :TerZeta , :TerHum .
 
-:StefanPrvovencani a :Vladar ;
+:StefanPrvovencani rdf:type :Vladar ;
     :Osoba.ime "Stefan Prvovencani" ;
     :Osoba.godinaRodjenja "1165"^^xsd:int ;
     :Osoba.godinaSmrti "1228"^^xsd:int ;
@@ -86,7 +85,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska , :TerZeta .
 
-:StefanRadoslav a :Vladar ;
+:StefanRadoslav rdf:type :Vladar ;
     :Osoba.ime "Stefan Radoslav" ;
     :Osoba.godinaRodjenja "1192"^^xsd:int ;
     :Osoba.godinaSmrti "1234"^^xsd:int ;
@@ -97,7 +96,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska .
 
-:StefanVladislav a :Vladar ;
+:StefanVladislav rdf:type :Vladar ;
     :Osoba.ime "Stefan Vladislav" ;
     :Osoba.godinaRodjenja "1198"^^xsd:int ;
     :Osoba.godinaSmrti "1264"^^xsd:int ;
@@ -108,7 +107,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska .
 
-:StefanUros1 a :Vladar ;
+:StefanUros1 rdf:type :Vladar ;
     :Osoba.ime "Stefan Uros I" ;
     :Osoba.godinaRodjenja "1223"^^xsd:int ;
     :Osoba.godinaSmrti "1277"^^xsd:int ;
@@ -119,7 +118,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska , :TerZeta .
 
-:StefanDragutin a :Vladar ;
+:StefanDragutin rdf:type :Vladar ;
     :Osoba.ime "Stefan Dragutin" ;
     :Osoba.godinaRodjenja "1252"^^xsd:int ;
     :Osoba.godinaSmrti "1316"^^xsd:int ;
@@ -130,7 +129,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska .
 
-:StefanMilutin a :Vladar ;
+:StefanMilutin rdf:type :Vladar ;
     :Osoba.ime "Stefan Milutin" ;
     :Osoba.godinaRodjenja "1253"^^xsd:int ;
     :Osoba.godinaSmrti "1321"^^xsd:int ;
@@ -141,7 +140,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo , :TerMacedonia .
 
-:StefanDecanski a :Vladar ;
+:StefanDecanski rdf:type :Vladar ;
     :Osoba.ime "Stefan Decanski" ;
     :Osoba.godinaRodjenja "1285"^^xsd:int ;
     :Osoba.godinaSmrti "1331"^^xsd:int ;
@@ -152,7 +151,7 @@
     :Vladar.vladaoDrzavom :KraljevinaSrbija ;
     :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo .
 
-:StefanDusan a :Vladar ;
+:StefanDusan rdf:type :Vladar ;
     :Osoba.ime "Stefan Dusan" ;
     :Osoba.godinaRodjenja "1308"^^xsd:int ;
     :Osoba.godinaSmrti "1355"^^xsd:int ;
@@ -163,7 +162,7 @@
     :Vladar.vladaoDrzavom :SrpskoCarstvo ;
     :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo , :TerMacedonia , :TerZeta , :TerHum .
 
-:StefanUros5 a :Vladar ;
+:StefanUros5 rdf:type :Vladar ;
     :Osoba.ime "Stefan Uros V" ;
     :Osoba.godinaRodjenja "1336"^^xsd:int ;
     :Osoba.godinaSmrti "1371"^^xsd:int ;
@@ -176,14 +175,14 @@
 # ================================================================
 # SVESTENICI
 # ================================================================
-:SvetiSava a :Svestenik ;
+:SvetiSava rdf:type :Svestenik ;
     :Osoba.ime "Sveti Sava" ;
     :Osoba.godinaRodjenja "1175"^^xsd:int ;
     :Osoba.godinaSmrti "1236"^^xsd:int ;
     :Svestenik.crkvenaFunkcija "Arhiepiskop" ;
     :Svestenik.upravljaManastirom :ManastirHilandar .
 
-:PatrijarhJoanikije a :Svestenik ;
+:PatrijarhJoanikije rdf:type :Svestenik ;
     :Osoba.ime "Joanikije II" ;
     :Osoba.godinaRodjenja "1290"^^xsd:int ;
     :Osoba.godinaSmrti "1354"^^xsd:int ;
@@ -193,14 +192,14 @@
 # ================================================================
 # PLEMICI
 # ================================================================
-:VukBrankovic a :Plemic ;
+:VukBrankovic rdf:type :Plemic ;
     :Osoba.ime "Vuk Brankovic" ;
     :Osoba.godinaRodjenja "1345"^^xsd:int ;
     :Osoba.godinaSmrti "1397"^^xsd:int ;
     :Plemic.zvanje "Oblasni gospodar" ;
     :Plemic.upravljaTeritorijom :TerKosovo .
 
-:LazarHrebeljanovic a :Plemic ;
+:LazarHrebeljanovic rdf:type :Plemic ;
     :Osoba.ime "Lazar Hrebeljanovic" ;
     :Osoba.godinaRodjenja "1329"^^xsd:int ;
     :Osoba.godinaSmrti "1389"^^xsd:int ;
@@ -210,14 +209,14 @@
 # ================================================================
 # CRKVE I MANASTIRI
 # ================================================================
-:ManastirStudenica a :Crkva ;
+:ManastirStudenica rdf:type :Crkva ;
     :Crkva.naziv "Manastir Studenica" ;
     :Crkva.tipCrkve "Manastir" ;
     :Crkva.godinaGradnje "1190"^^xsd:int ;
     :Crkva.ktitor :StefanNemanja ;
     :Crkva.lokacija :TerRaska .
 
-:ManastirHilandar a :Crkva ;
+:ManastirHilandar rdf:type :Crkva ;
     :Crkva.naziv "Manastir Hilandar" ;
     :Crkva.tipCrkve "Manastir" ;
     :Crkva.godinaGradnje "1198"^^xsd:int ;
@@ -225,28 +224,28 @@
     :Crkva.lokacija :TerRaska ;
     :Crkva.upravnik :SvetiSava .
 
-:ManastirZica a :Crkva ;
+:ManastirZica rdf:type :Crkva ;
     :Crkva.naziv "Manastir Zica" ;
     :Crkva.tipCrkve "Manastir" ;
     :Crkva.godinaGradnje "1208"^^xsd:int ;
     :Crkva.ktitor :StefanPrvovencani ;
     :Crkva.lokacija :TerRaska .
 
-:ManastirGracanica a :Crkva ;
+:ManastirGracanica rdf:type :Crkva ;
     :Crkva.naziv "Manastir Gracanica" ;
     :Crkva.tipCrkve "Manastir" ;
     :Crkva.godinaGradnje "1321"^^xsd:int ;
     :Crkva.ktitor :StefanMilutin ;
     :Crkva.lokacija :TerKosovo .
 
-:ManastirDecani a :Crkva ;
+:ManastirDecani rdf:type :Crkva ;
     :Crkva.naziv "Manastir Decani" ;
     :Crkva.tipCrkve "Manastir" ;
     :Crkva.godinaGradnje "1327"^^xsd:int ;
     :Crkva.ktitor :StefanDecanski ;
     :Crkva.lokacija :TerKosovo .
 
-:PeckaPatrijarsija a :Crkva ;
+:PeckaPatrijarsija rdf:type :Crkva ;
     :Crkva.naziv "Pecka Patrijarsija" ;
     :Crkva.tipCrkve "Crkva" ;
     :Crkva.godinaGradnje "1253"^^xsd:int ;
@@ -257,19 +256,19 @@
 # ================================================================
 # GRADOVI
 # ================================================================
-:GradRas a :Grad ;
+:GradRas rdf:type :Grad ;
     :Grad.naziv "Ras" ;
     :Grad.godinaOsnivanja "900"^^xsd:int ;
     :Grad.jePrestonica "true"^^xsd:boolean ;
     :Grad.teritorija :TerRaska .
 
-:GradSkoplje a :Grad ;
+:GradSkoplje rdf:type :Grad ;
     :Grad.naziv "Skoplje" ;
     :Grad.godinaOsnivanja "580"^^xsd:int ;
     :Grad.jePrestonica "true"^^xsd:boolean ;
     :Grad.teritorija :TerMacedonia .
 
-:GradPrizren a :Grad ;
+:GradPrizren rdf:type :Grad ;
     :Grad.naziv "Prizren" ;
     :Grad.godinaOsnivanja "550"^^xsd:int ;
     :Grad.jePrestonica "false"^^xsd:boolean ;
@@ -278,21 +277,21 @@
 # ================================================================
 # BITKE
 # ================================================================
-:BitkaNaVelbudu a :Bitka ;
+:BitkaNaVelbudu rdf:type :Bitka ;
     :Bitka.naziv "Bitka na Velbudu" ;
     :Bitka.godina "1330"^^xsd:int ;
     :Bitka.lokacija "Velbud (Kjustendil)" ;
     :Bitka.pobjednik :StefanDecanski ;
     :Bitka.ucestvovao :StefanDecanski , :StefanDusan .
 
-:OsvajanjeSkoplja a :Bitka ;
+:OsvajanjeSkoplja rdf:type :Bitka ;
     :Bitka.naziv "Osvajanje Skoplja" ;
     :Bitka.godina "1282"^^xsd:int ;
     :Bitka.lokacija "Skoplje" ;
     :Bitka.pobjednik :StefanMilutin ;
     :Bitka.ucestvovao :StefanMilutin .
 
-:BitkaNaMarici a :Bitka ;
+:BitkaNaMarici rdf:type :Bitka ;
     :Bitka.naziv "Bitka na Marici" ;
     :Bitka.godina "1371"^^xsd:int ;
     :Bitka.lokacija "rijeka Marica" ;
@@ -301,13 +300,13 @@
 # ================================================================
 # PRAVNI DOKUMENTI
 # ================================================================
-:DusanovZakonik a :PravniDokument ;
+:DusanovZakonik rdf:type :PravniDokument ;
     :PravniDokument.naziv "Dusanov Zakonik" ;
     :PravniDokument.godinaDonosenja "1349"^^xsd:int ;
     :PravniDokument.opis "Zakonik cara Stefana Dusana, prvi srpski zakonik" ;
     :PravniDokument.donosilac :StefanDusan .
 
-:PoveljaStefanaNemanje a :PravniDokument ;
+:PoveljaStefanaNemanje rdf:type :PravniDokument ;
     :PravniDokument.naziv "Povelja Stefana Nemanje" ;
     :PravniDokument.godinaDonosenja "1196"^^xsd:int ;
     :PravniDokument.opis "Povelja kojom Stefan Nemanja daruje manastir Hilandar" ;
@@ -316,12 +315,12 @@
 # ================================================================
 # UGOVORI
 # ================================================================
-:UgovorSaBizantom a :Ugovor ;
+:UgovorSaBizantom rdf:type :Ugovor ;
     :Ugovor.naziv "Ugovor sa Vizantijom" ;
     :Ugovor.godinaSklapanja "1299"^^xsd:int ;
     :Ugovor.potpisnik :StefanMilutin .
 
-:UgovorSaMletkcanima a :Ugovor ;
+:UgovorSaMletkcanima rdf:type :Ugovor ;
     :Ugovor.naziv "Ugovor sa Mleccanima" ;
     :Ugovor.godinaSklapanja "1345"^^xsd:int ;
     :Ugovor.potpisnik :StefanDusan .
