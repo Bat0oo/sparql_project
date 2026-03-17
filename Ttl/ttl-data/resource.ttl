@@ -1,326 +1,292 @@
-@prefix : <http://iec.ch/TC57/NemanjiciSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# ================================================================
-# DINASTIJA
-# ================================================================
-:DinastijaNemanjica rdf:type :Dinastija ;
-    :Dinastija.naziv "Nemanjici" ;
-    :Dinastija.godinaOsnivanja "1166"^^xsd:int ;
-    :Dinastija.godinaGasenja "1371"^^xsd:int ;
-    :Dinastija.osnivac :StefanNemanja .
+nemanjicischema:DinastijaNemanjica a nemanjicischema:Dinastija ;
+	nemanjicischema:Dinastija.naziv "Nemanjici" ;
+	nemanjicischema:Dinastija.godinaOsnivanja 1166 ;
+	nemanjicischema:Dinastija.godinaGasenja 1371 ;
+	nemanjicischema:Dinastija.osnivac nemanjicischema:stefan_nemanja .
 
-# ================================================================
-# DRZAVE
-# ================================================================
-:SrpskaVelikaZupanija rdf:type :Drzava ;
-    :Drzava.naziv "Srpska Velika Zupanija" ;
-    :Drzava.tipTeritorije "Zupanija" ;
-    :Drzava.godinaOsnivanja "1091"^^xsd:int ;
-    :Drzava.vladajucaDinastija :DinastijaNemanjica .
+nemanjicischema:srpska_velika_zupanija a nemanjicischema:Drzava ;
+	nemanjicischema:Drzava.naziv "Srpska Velika Zupanija" ;
+	nemanjicischema:Drzava.tipTeritorije "Zupanija" ;
+	nemanjicischema:Drzava.godinaOsnivanja 1091 ;
+	nemanjicischema:Drzava.vladajucaDinastija nemanjicischema:DinastijaNemanjica .
 
-:KraljevinaSrbija rdf:type :Drzava ;
-    :Drzava.naziv "Kraljevina Srbija" ;
-    :Drzava.tipTeritorije "Kraljevina" ;
-    :Drzava.godinaOsnivanja "1217"^^xsd:int ;
-    :Drzava.vladajucaDinastija :DinastijaNemanjica .
+nemanjicischema:kraljevina_srbija a nemanjicischema:Drzava ;
+	nemanjicischema:Drzava.naziv "Kraljevina Srbija" ;
+	nemanjicischema:Drzava.tipTeritorije "Kraljevina" ;
+	nemanjicischema:Drzava.godinaOsnivanja 1217 ;
+	nemanjicischema:Drzava.vladajucaDinastija nemanjicischema:DinastijaNemanjica .
 
-:SrpskoCarstvo rdf:type :Drzava ;
-    :Drzava.naziv "Srpsko Carstvo" ;
-    :Drzava.tipTeritorije "Carstvo" ;
-    :Drzava.godinaOsnivanja "1346"^^xsd:int ;
-    :Drzava.vladajucaDinastija :DinastijaNemanjica .
+nemanjicischema:srpsko_carstvo a nemanjicischema:Drzava ;
+	nemanjicischema:Drzava.naziv "Srpsko Carstvo" ;
+	nemanjicischema:Drzava.tipTeritorije "Carstvo" ;
+	nemanjicischema:Drzava.godinaOsnivanja 1346 ;
+	nemanjicischema:Drzava.vladajucaDinastija nemanjicischema:DinastijaNemanjica .
 
-# ================================================================
-# TERITORIJE
-# ================================================================
-:TerRaska rdf:type :Teritorija ;
-    :Teritorija.naziv "Raska" ;
-    :Teritorija.tipTeritorije "Zupanija" ;
-    :Teritorija.dioOd :SrpskaVelikaZupanija .
+nemanjicischema:ter_raska a nemanjicischema:Teritorija ;
+	nemanjicischema:Teritorija.naziv "Raska" ;
+	nemanjicischema:Teritorija.tipTeritorije "Zupanija" ;
+	nemanjicischema:Teritorija.dioOd nemanjicischema:srpska_velika_zupanija .
 
-:TerZeta rdf:type :Teritorija ;
-    :Teritorija.naziv "Zeta" ;
-    :Teritorija.tipTeritorije "Oblast" ;
-    :Teritorija.dioOd :KraljevinaSrbija .
+nemanjicischema:ter_zeta a nemanjicischema:Teritorija ;
+	nemanjicischema:Teritorija.naziv "Zeta" ;
+	nemanjicischema:Teritorija.tipTeritorije "Oblast" ;
+	nemanjicischema:Teritorija.dioOd nemanjicischema:kraljevina_srbija .
 
-:TerMacedonia rdf:type :Teritorija ;
-    :Teritorija.naziv "Makedonija" ;
-    :Teritorija.tipTeritorije "Oblast" ;
-    :Teritorija.dioOd :SrpskoCarstvo .
+nemanjicischema:ter_macedonia a nemanjicischema:Teritorija ;
+	nemanjicischema:Teritorija.naziv "Makedonija" ;
+	nemanjicischema:Teritorija.tipTeritorije "Oblast" ;
+	nemanjicischema:Teritorija.dioOd nemanjicischema:srpsko_carstvo .
 
-:TerKosovo rdf:type :Teritorija ;
-    :Teritorija.naziv "Kosovo" ;
-    :Teritorija.tipTeritorije "Oblast" ;
-    :Teritorija.dioOd :KraljevinaSrbija .
+nemanjicischema:ter_kosovo a nemanjicischema:Teritorija ;
+	nemanjicischema:Teritorija.naziv "Kosovo" ;
+	nemanjicischema:Teritorija.tipTeritorije "Oblast" ;
+	nemanjicischema:Teritorija.dioOd nemanjicischema:kraljevina_srbija .
 
-:TerHum rdf:type :Teritorija ;
-    :Teritorija.naziv "Hum" ;
-    :Teritorija.tipTeritorije "Oblast" ;
-    :Teritorija.dioOd :KraljevinaSrbija .
+nemanjicischema:ter_hum a nemanjicischema:Teritorija ;
+	nemanjicischema:Teritorija.naziv "Hum" ;
+	nemanjicischema:Teritorija.tipTeritorije "Oblast" ;
+	nemanjicischema:Teritorija.dioOd nemanjicischema:kraljevina_srbija .
 
-# ================================================================
-# VLADARI
-# ================================================================
-:StefanNemanja rdf:type :Vladar ;
-    :Osoba.ime "Stefan Nemanja" ;
-    :Osoba.godinaRodjenja "1113"^^xsd:int ;
-    :Osoba.godinaSmrti "1199"^^xsd:int ;
-    :Vladar.titula "VelikaZupan" ;
-    :Vladar.vladaoOd "1166"^^xsd:int ;
-    :Vladar.vladaoDo "1196"^^xsd:int ;
-    :Vladar.nasljednik :StefanPrvovencani ;
-    :Vladar.vladaoDrzavom :SrpskaVelikaZupanija ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerZeta , :TerHum .
+nemanjicischema:stefan_nemanja a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Nemanja" ;
+	nemanjicischema:Osoba.godinaRodjenja 1113 ;
+	nemanjicischema:Osoba.godinaSmrti 1199 ;
+	nemanjicischema:Vladar.titula "VelikaZupan" ;
+	nemanjicischema:Vladar.vladaoOd 1166 ;
+	nemanjicischema:Vladar.vladaoDo 1196 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_prvovencani ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:srpska_velika_zupanija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_zeta , nemanjicischema:ter_hum .
 
-:StefanPrvovencani rdf:type :Vladar ;
-    :Osoba.ime "Stefan Prvovencani" ;
-    :Osoba.godinaRodjenja "1165"^^xsd:int ;
-    :Osoba.godinaSmrti "1228"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1196"^^xsd:int ;
-    :Vladar.vladaoDo "1228"^^xsd:int ;
-    :Vladar.nasljednik :StefanRadoslav ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerZeta .
+nemanjicischema:stefan_prvovencani a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Prvovencani" ;
+	nemanjicischema:Osoba.godinaRodjenja 1165 ;
+	nemanjicischema:Osoba.godinaSmrti 1228 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1196 ;
+	nemanjicischema:Vladar.vladaoDo 1228 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_radoslav ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_zeta .
 
-:StefanRadoslav rdf:type :Vladar ;
-    :Osoba.ime "Stefan Radoslav" ;
-    :Osoba.godinaRodjenja "1192"^^xsd:int ;
-    :Osoba.godinaSmrti "1234"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1228"^^xsd:int ;
-    :Vladar.vladaoDo "1233"^^xsd:int ;
-    :Vladar.nasljednik :StefanVladislav ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska .
+nemanjicischema:stefan_radoslav a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Radoslav" ;
+	nemanjicischema:Osoba.godinaRodjenja 1192 ;
+	nemanjicischema:Osoba.godinaSmrti 1234 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1228 ;
+	nemanjicischema:Vladar.vladaoDo 1233 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_vladislav ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska .
 
-:StefanVladislav rdf:type :Vladar ;
-    :Osoba.ime "Stefan Vladislav" ;
-    :Osoba.godinaRodjenja "1198"^^xsd:int ;
-    :Osoba.godinaSmrti "1264"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1233"^^xsd:int ;
-    :Vladar.vladaoDo "1243"^^xsd:int ;
-    :Vladar.nasljednik :StefanUros1 ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska .
+nemanjicischema:stefan_vladislav a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Vladislav" ;
+	nemanjicischema:Osoba.godinaRodjenja 1198 ;
+	nemanjicischema:Osoba.godinaSmrti 1264 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1233 ;
+	nemanjicischema:Vladar.vladaoDo 1243 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_uros_1 ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska .
 
-:StefanUros1 rdf:type :Vladar ;
-    :Osoba.ime "Stefan Uros I" ;
-    :Osoba.godinaRodjenja "1223"^^xsd:int ;
-    :Osoba.godinaSmrti "1277"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1243"^^xsd:int ;
-    :Vladar.vladaoDo "1276"^^xsd:int ;
-    :Vladar.nasljednik :StefanDragutin ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerZeta .
+nemanjicischema:stefan_uros_1 a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Uros I" ;
+	nemanjicischema:Osoba.godinaRodjenja 1223 ;
+	nemanjicischema:Osoba.godinaSmrti 1277 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1243 ;
+	nemanjicischema:Vladar.vladaoDo 1276 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_dragutin ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_zeta .
 
-:StefanDragutin rdf:type :Vladar ;
-    :Osoba.ime "Stefan Dragutin" ;
-    :Osoba.godinaRodjenja "1252"^^xsd:int ;
-    :Osoba.godinaSmrti "1316"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1276"^^xsd:int ;
-    :Vladar.vladaoDo "1282"^^xsd:int ;
-    :Vladar.nasljednik :StefanMilutin ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska .
+nemanjicischema:stefan_dragutin a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Dragutin" ;
+	nemanjicischema:Osoba.godinaRodjenja 1252 ;
+	nemanjicischema:Osoba.godinaSmrti 1316 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1276 ;
+	nemanjicischema:Vladar.vladaoDo 1282 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_milutin ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska .
 
-:StefanMilutin rdf:type :Vladar ;
-    :Osoba.ime "Stefan Milutin" ;
-    :Osoba.godinaRodjenja "1253"^^xsd:int ;
-    :Osoba.godinaSmrti "1321"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1282"^^xsd:int ;
-    :Vladar.vladaoDo "1321"^^xsd:int ;
-    :Vladar.nasljednik :StefanDecanski ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo , :TerMacedonia .
+nemanjicischema:stefan_milutin a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Milutin" ;
+	nemanjicischema:Osoba.godinaRodjenja 1253 ;
+	nemanjicischema:Osoba.godinaSmrti 1321 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1282 ;
+	nemanjicischema:Vladar.vladaoDo 1321 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_decanski ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_kosovo , nemanjicischema:ter_macedonia .
 
-:StefanDecanski rdf:type :Vladar ;
-    :Osoba.ime "Stefan Decanski" ;
-    :Osoba.godinaRodjenja "1285"^^xsd:int ;
-    :Osoba.godinaSmrti "1331"^^xsd:int ;
-    :Vladar.titula "Kralj" ;
-    :Vladar.vladaoOd "1322"^^xsd:int ;
-    :Vladar.vladaoDo "1331"^^xsd:int ;
-    :Vladar.nasljednik :StefanDusan ;
-    :Vladar.vladaoDrzavom :KraljevinaSrbija ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo .
+nemanjicischema:stefan_decanski a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Decanski" ;
+	nemanjicischema:Osoba.godinaRodjenja 1285 ;
+	nemanjicischema:Osoba.godinaSmrti 1331 ;
+	nemanjicischema:Vladar.titula "Kralj" ;
+	nemanjicischema:Vladar.vladaoOd 1322 ;
+	nemanjicischema:Vladar.vladaoDo 1331 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_dusan ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:kraljevina_srbija ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_kosovo .
 
-:StefanDusan rdf:type :Vladar ;
-    :Osoba.ime "Stefan Dusan" ;
-    :Osoba.godinaRodjenja "1308"^^xsd:int ;
-    :Osoba.godinaSmrti "1355"^^xsd:int ;
-    :Vladar.titula "Car" ;
-    :Vladar.vladaoOd "1331"^^xsd:int ;
-    :Vladar.vladaoDo "1355"^^xsd:int ;
-    :Vladar.nasljednik :StefanUros5 ;
-    :Vladar.vladaoDrzavom :SrpskoCarstvo ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo , :TerMacedonia , :TerZeta , :TerHum .
+nemanjicischema:stefan_dusan a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Dusan" ;
+	nemanjicischema:Osoba.godinaRodjenja 1308 ;
+	nemanjicischema:Osoba.godinaSmrti 1355 ;
+	nemanjicischema:Vladar.titula "Car" ;
+	nemanjicischema:Vladar.vladaoOd 1331 ;
+	nemanjicischema:Vladar.vladaoDo 1355 ;
+	nemanjicischema:Vladar.nasljednik nemanjicischema:stefan_uros_5 ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:srpsko_carstvo ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_kosovo , nemanjicischema:ter_macedonia , nemanjicischema:ter_zeta , nemanjicischema:ter_hum .
 
-:StefanUros5 rdf:type :Vladar ;
-    :Osoba.ime "Stefan Uros V" ;
-    :Osoba.godinaRodjenja "1336"^^xsd:int ;
-    :Osoba.godinaSmrti "1371"^^xsd:int ;
-    :Vladar.titula "Car" ;
-    :Vladar.vladaoOd "1355"^^xsd:int ;
-    :Vladar.vladaoDo "1371"^^xsd:int ;
-    :Vladar.vladaoDrzavom :SrpskoCarstvo ;
-    :Vladar.vladaoTeritorijom :TerRaska , :TerKosovo .
+nemanjicischema:stefan_uros_5 a nemanjicischema:Vladar ;
+	nemanjicischema:Osoba.ime "Stefan Uros V" ;
+	nemanjicischema:Osoba.godinaRodjenja 1336 ;
+	nemanjicischema:Osoba.godinaSmrti 1371 ;
+	nemanjicischema:Vladar.titula "Car" ;
+	nemanjicischema:Vladar.vladaoOd 1355 ;
+	nemanjicischema:Vladar.vladaoDo 1371 ;
+	nemanjicischema:Vladar.vladaoDrzavom nemanjicischema:srpsko_carstvo ;
+	nemanjicischema:Vladar.vladaoTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_kosovo .
 
-# ================================================================
-# SVESTENICI
-# ================================================================
-:SvetiSava rdf:type :Svestenik ;
-    :Osoba.ime "Sveti Sava" ;
-    :Osoba.godinaRodjenja "1175"^^xsd:int ;
-    :Osoba.godinaSmrti "1236"^^xsd:int ;
-    :Svestenik.crkvenaFunkcija "Arhiepiskop" ;
-    :Svestenik.upravljaManastirom :ManastirHilandar .
+nemanjicischema:sveti_sava a nemanjicischema:Svestenik ;
+	nemanjicischema:Osoba.ime "Sveti Sava" ;
+	nemanjicischema:Osoba.godinaRodjenja 1175 ;
+	nemanjicischema:Osoba.godinaSmrti 1236 ;
+	nemanjicischema:Svestenik.crkvenaFunkcija "Arhiepiskop" ;
+	nemanjicischema:Svestenik.upravljaManastirom nemanjicischema:manastir_hilandar .
 
-:PatrijarhJoanikije rdf:type :Svestenik ;
-    :Osoba.ime "Joanikije II" ;
-    :Osoba.godinaRodjenja "1290"^^xsd:int ;
-    :Osoba.godinaSmrti "1354"^^xsd:int ;
-    :Svestenik.crkvenaFunkcija "Patrijarh" ;
-    :Svestenik.upravljaManastirom :PeckaPatrijarsija .
+nemanjicischema:patrijarh_joanikije a nemanjicischema:Svestenik ;
+	nemanjicischema:Osoba.ime "Joanikije II" ;
+	nemanjicischema:Osoba.godinaRodjenja 1290 ;
+	nemanjicischema:Osoba.godinaSmrti 1354 ;
+	nemanjicischema:Svestenik.crkvenaFunkcija "Patrijarh" ;
+	nemanjicischema:Svestenik.upravljaManastirom nemanjicischema:pecka_patrijarsija .
 
-# ================================================================
-# PLEMICI
-# ================================================================
-:VukBrankovic rdf:type :Plemic ;
-    :Osoba.ime "Vuk Brankovic" ;
-    :Osoba.godinaRodjenja "1345"^^xsd:int ;
-    :Osoba.godinaSmrti "1397"^^xsd:int ;
-    :Plemic.zvanje "Oblasni gospodar" ;
-    :Plemic.upravljaTeritorijom :TerKosovo .
+nemanjicischema:vuk_brankovic a nemanjicischema:Plemic ;
+	nemanjicischema:Osoba.ime "Vuk Brankovic" ;
+	nemanjicischema:Osoba.godinaRodjenja 1345 ;
+	nemanjicischema:Osoba.godinaSmrti 1397 ;
+	nemanjicischema:Plemic.zvanje "Oblasni gospodar" ;
+	nemanjicischema:Plemic.upravljaTeritorijom nemanjicischema:ter_kosovo .
 
-:LazarHrebeljanovic rdf:type :Plemic ;
-    :Osoba.ime "Lazar Hrebeljanovic" ;
-    :Osoba.godinaRodjenja "1329"^^xsd:int ;
-    :Osoba.godinaSmrti "1389"^^xsd:int ;
-    :Plemic.zvanje "Knez" ;
-    :Plemic.upravljaTeritorijom :TerRaska , :TerKosovo .
+nemanjicischema:lazar_hrebeljanovic a nemanjicischema:Plemic ;
+	nemanjicischema:Osoba.ime "Lazar Hrebeljanovic" ;
+	nemanjicischema:Osoba.godinaRodjenja 1329 ;
+	nemanjicischema:Osoba.godinaSmrti 1389 ;
+	nemanjicischema:Plemic.zvanje "Knez" ;
+	nemanjicischema:Plemic.upravljaTeritorijom nemanjicischema:ter_raska , nemanjicischema:ter_kosovo .
 
-# ================================================================
-# CRKVE I MANASTIRI
-# ================================================================
-:ManastirStudenica rdf:type :Crkva ;
-    :Crkva.naziv "Manastir Studenica" ;
-    :Crkva.tipCrkve "Manastir" ;
-    :Crkva.godinaGradnje "1190"^^xsd:int ;
-    :Crkva.ktitor :StefanNemanja ;
-    :Crkva.lokacija :TerRaska .
+nemanjicischema:manastir_studenica a nemanjicischema:Crkva ;
+	nemanjicischema:Crkva.naziv "Manastir Studenica" ;
+	nemanjicischema:Crkva.tipCrkve "Manastir" ;
+	nemanjicischema:Crkva.godinaGradnje 1190 ;
+	nemanjicischema:Crkva.ktitor nemanjicischema:stefan_nemanja ;
+	nemanjicischema:Crkva.lokacija nemanjicischema:ter_raska .
 
-:ManastirHilandar rdf:type :Crkva ;
-    :Crkva.naziv "Manastir Hilandar" ;
-    :Crkva.tipCrkve "Manastir" ;
-    :Crkva.godinaGradnje "1198"^^xsd:int ;
-    :Crkva.ktitor :StefanNemanja ;
-    :Crkva.lokacija :TerRaska ;
-    :Crkva.upravnik :SvetiSava .
+nemanjicischema:manastir_hilandar a nemanjicischema:Crkva ;
+	nemanjicischema:Crkva.naziv "Manastir Hilandar" ;
+	nemanjicischema:Crkva.tipCrkve "Manastir" ;
+	nemanjicischema:Crkva.godinaGradnje 1198 ;
+	nemanjicischema:Crkva.ktitor nemanjicischema:stefan_nemanja ;
+	nemanjicischema:Crkva.lokacija nemanjicischema:ter_raska ;
+	nemanjicischema:Crkva.upravnik nemanjicischema:sveti_sava .
 
-:ManastirZica rdf:type :Crkva ;
-    :Crkva.naziv "Manastir Zica" ;
-    :Crkva.tipCrkve "Manastir" ;
-    :Crkva.godinaGradnje "1208"^^xsd:int ;
-    :Crkva.ktitor :StefanPrvovencani ;
-    :Crkva.lokacija :TerRaska .
+nemanjicischema:manastir_zica a nemanjicischema:Crkva ;
+	nemanjicischema:Crkva.naziv "Manastir Zica" ;
+	nemanjicischema:Crkva.tipCrkve "Manastir" ;
+	nemanjicischema:Crkva.godinaGradnje 1208 ;
+	nemanjicischema:Crkva.ktitor nemanjicischema:stefan_prvovencani ;
+	nemanjicischema:Crkva.lokacija nemanjicischema:ter_raska .
 
-:ManastirGracanica rdf:type :Crkva ;
-    :Crkva.naziv "Manastir Gracanica" ;
-    :Crkva.tipCrkve "Manastir" ;
-    :Crkva.godinaGradnje "1321"^^xsd:int ;
-    :Crkva.ktitor :StefanMilutin ;
-    :Crkva.lokacija :TerKosovo .
+nemanjicischema:manastir_gracanica a nemanjicischema:Crkva ;
+	nemanjicischema:Crkva.naziv "Manastir Gracanica" ;
+	nemanjicischema:Crkva.tipCrkve "Manastir" ;
+	nemanjicischema:Crkva.godinaGradnje 1321 ;
+	nemanjicischema:Crkva.ktitor nemanjicischema:stefan_milutin ;
+	nemanjicischema:Crkva.lokacija nemanjicischema:ter_kosovo .
 
-:ManastirDecani rdf:type :Crkva ;
-    :Crkva.naziv "Manastir Decani" ;
-    :Crkva.tipCrkve "Manastir" ;
-    :Crkva.godinaGradnje "1327"^^xsd:int ;
-    :Crkva.ktitor :StefanDecanski ;
-    :Crkva.lokacija :TerKosovo .
+nemanjicischema:manastir_decani a nemanjicischema:Crkva ;
+	nemanjicischema:Crkva.naziv "Manastir Decani" ;
+	nemanjicischema:Crkva.tipCrkve "Manastir" ;
+	nemanjicischema:Crkva.godinaGradnje 1327 ;
+	nemanjicischema:Crkva.ktitor nemanjicischema:stefan_decanski ;
+	nemanjicischema:Crkva.lokacija nemanjicischema:ter_kosovo .
 
-:PeckaPatrijarsija rdf:type :Crkva ;
-    :Crkva.naziv "Pecka Patrijarsija" ;
-    :Crkva.tipCrkve "Crkva" ;
-    :Crkva.godinaGradnje "1253"^^xsd:int ;
-    :Crkva.ktitor :StefanUros1 ;
-    :Crkva.lokacija :TerKosovo ;
-    :Crkva.upravnik :PatrijarhJoanikije .
+nemanjicischema:pecka_patrijarsija a nemanjicischema:Crkva ;
+	nemanjicischema:Crkva.naziv "Pecka Patrijarsija" ;
+	nemanjicischema:Crkva.tipCrkve "Crkva" ;
+	nemanjicischema:Crkva.godinaGradnje 1253 ;
+	nemanjicischema:Crkva.ktitor nemanjicischema:stefan_uros_1 ;
+	nemanjicischema:Crkva.lokacija nemanjicischema:ter_kosovo ;
+	nemanjicischema:Crkva.upravnik nemanjicischema:patrijarh_joanikije .
 
-# ================================================================
-# GRADOVI
-# ================================================================
-:GradRas rdf:type :Grad ;
-    :Grad.naziv "Ras" ;
-    :Grad.godinaOsnivanja "900"^^xsd:int ;
-    :Grad.jePrestonica "true"^^xsd:boolean ;
-    :Grad.teritorija :TerRaska .
+nemanjicischema:grad_ras a nemanjicischema:Grad ;
+	nemanjicischema:Grad.naziv "Ras" ;
+	nemanjicischema:Grad.godinaOsnivanja 900 ;
+	nemanjicischema:Grad.jePrestonica true ;
+	nemanjicischema:Grad.teritorija nemanjicischema:ter_raska .
 
-:GradSkoplje rdf:type :Grad ;
-    :Grad.naziv "Skoplje" ;
-    :Grad.godinaOsnivanja "580"^^xsd:int ;
-    :Grad.jePrestonica "true"^^xsd:boolean ;
-    :Grad.teritorija :TerMacedonia .
+nemanjicischema:grad_skoplje a nemanjicischema:Grad ;
+	nemanjicischema:Grad.naziv "Skoplje" ;
+	nemanjicischema:Grad.godinaOsnivanja 580 ;
+	nemanjicischema:Grad.jePrestonica true ;
+	nemanjicischema:Grad.teritorija nemanjicischema:ter_macedonia .
 
-:GradPrizren rdf:type :Grad ;
-    :Grad.naziv "Prizren" ;
-    :Grad.godinaOsnivanja "550"^^xsd:int ;
-    :Grad.jePrestonica "false"^^xsd:boolean ;
-    :Grad.teritorija :TerKosovo .
+nemanjicischema:grad_prizren a nemanjicischema:Grad ;
+	nemanjicischema:Grad.naziv "Prizren" ;
+	nemanjicischema:Grad.godinaOsnivanja 550 ;
+	nemanjicischema:Grad.jePrestonica false ;
+	nemanjicischema:Grad.teritorija nemanjicischema:ter_kosovo .
 
-# ================================================================
-# BITKE
-# ================================================================
-:BitkaNaVelbudu rdf:type :Bitka ;
-    :Bitka.naziv "Bitka na Velbudu" ;
-    :Bitka.godina "1330"^^xsd:int ;
-    :Bitka.lokacija "Velbud (Kjustendil)" ;
-    :Bitka.pobjednik :StefanDecanski ;
-    :Bitka.ucestvovao :StefanDecanski , :StefanDusan .
+nemanjicischema:bitka_velbud a nemanjicischema:Bitka ;
+	nemanjicischema:Bitka.naziv "Bitka na Velbudu" ;
+	nemanjicischema:Bitka.godina 1330 ;
+	nemanjicischema:Bitka.lokacija "Velbud (Kjustendil)" ;
+	nemanjicischema:Bitka.pobjednik nemanjicischema:stefan_decanski ;
+	nemanjicischema:Bitka.ucestvovao nemanjicischema:stefan_decanski , nemanjicischema:stefan_dusan .
 
-:OsvajanjeSkoplja rdf:type :Bitka ;
-    :Bitka.naziv "Osvajanje Skoplja" ;
-    :Bitka.godina "1282"^^xsd:int ;
-    :Bitka.lokacija "Skoplje" ;
-    :Bitka.pobjednik :StefanMilutin ;
-    :Bitka.ucestvovao :StefanMilutin .
+nemanjicischema:osvajanje_skoplja a nemanjicischema:Bitka ;
+	nemanjicischema:Bitka.naziv "Osvajanje Skoplja" ;
+	nemanjicischema:Bitka.godina 1282 ;
+	nemanjicischema:Bitka.lokacija "Skoplje" ;
+	nemanjicischema:Bitka.pobjednik nemanjicischema:stefan_milutin ;
+	nemanjicischema:Bitka.ucestvovao nemanjicischema:stefan_milutin .
 
-:BitkaNaMarici rdf:type :Bitka ;
-    :Bitka.naziv "Bitka na Marici" ;
-    :Bitka.godina "1371"^^xsd:int ;
-    :Bitka.lokacija "rijeka Marica" ;
-    :Bitka.ucestvovao :StefanUros5 .
+nemanjicischema:bitka_marica a nemanjicischema:Bitka ;
+	nemanjicischema:Bitka.naziv "Bitka na Marici" ;
+	nemanjicischema:Bitka.godina 1371 ;
+	nemanjicischema:Bitka.lokacija "rijeka Marica" ;
+	nemanjicischema:Bitka.ucestvovao nemanjicischema:stefan_uros_5 .
 
-# ================================================================
-# PRAVNI DOKUMENTI
-# ================================================================
-:DusanovZakonik rdf:type :PravniDokument ;
-    :PravniDokument.naziv "Dusanov Zakonik" ;
-    :PravniDokument.godinaDonosenja "1349"^^xsd:int ;
-    :PravniDokument.opis "Zakonik cara Stefana Dusana, prvi srpski zakonik" ;
-    :PravniDokument.donosilac :StefanDusan .
+nemanjicischema:dusanov_zakonik a nemanjicischema:PravniDokument ;
+	nemanjicischema:PravniDokument.naziv "Dusanov Zakonik" ;
+	nemanjicischema:PravniDokument.godinaDonosenja 1349 ;
+	nemanjicischema:PravniDokument.opis "Zakonik cara Stefana Dusana, prvi srpski zakonik" ;
+	nemanjicischema:PravniDokument.donosilac nemanjicischema:stefan_dusan .
 
-:PoveljaStefanaNemanje rdf:type :PravniDokument ;
-    :PravniDokument.naziv "Povelja Stefana Nemanje" ;
-    :PravniDokument.godinaDonosenja "1196"^^xsd:int ;
-    :PravniDokument.opis "Povelja kojom Stefan Nemanja daruje manastir Hilandar" ;
-    :PravniDokument.donosilac :StefanNemanja .
+nemanjicischema:povelja_nemanje a nemanjicischema:PravniDokument ;
+	nemanjicischema:PravniDokument.naziv "Povelja Stefana Nemanje" ;
+	nemanjicischema:PravniDokument.godinaDonosenja 1196 ;
+	nemanjicischema:PravniDokument.opis "Povelja kojom Stefan Nemanja daruje manastir Hilandar" ;
+	nemanjicischema:PravniDokument.donosilac nemanjicischema:stefan_nemanja .
 
-# ================================================================
-# UGOVORI
-# ================================================================
-:UgovorSaBizantom rdf:type :Ugovor ;
-    :Ugovor.naziv "Ugovor sa Vizantijom" ;
-    :Ugovor.godinaSklapanja "1299"^^xsd:int ;
-    :Ugovor.potpisnik :StefanMilutin .
+nemanjicischema:ugovor_vizantija a nemanjicischema:Ugovor ;
+	nemanjicischema:Ugovor.naziv "Ugovor sa Vizantijom" ;
+	nemanjicischema:Ugovor.godinaSklapanja 1299 ;
+	nemanjicischema:Ugovor.potpisnik nemanjicischema:stefan_milutin .
 
-:UgovorSaMletkcanima rdf:type :Ugovor ;
-    :Ugovor.naziv "Ugovor sa Mleccanima" ;
-    :Ugovor.godinaSklapanja "1345"^^xsd:int ;
-    :Ugovor.potpisnik :StefanDusan .
+nemanjicischema:ugovor_mleci a nemanjicischema:Ugovor ;
+	nemanjicischema:Ugovor.naziv "Ugovor sa Mleccanima" ;
+	nemanjicischema:Ugovor.godinaSklapanja 1345 ;
+	nemanjicischema:Ugovor.potpisnik nemanjicischema:stefan_dusan .
