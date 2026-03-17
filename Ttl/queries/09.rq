@@ -1,0 +1,14 @@
+#title: Crkve na Kosovu sa ktitorima
+#comment: Filtrira crkve po lokaciji Kosovo
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?crkvaNaziv ?ktitorIme ?godina
+WHERE {
+    ?c a nemanjicischema:Crkva ;
+       nemanjicischema:Crkva.naziv ?crkvaNaziv ;
+       nemanjicischema:Crkva.godinaGradnje ?godina ;
+       nemanjicischema:Crkva.ktitor ?k ;
+       nemanjicischema:Crkva.lokacija nemanjicischema:ter_kosovo .
+    ?k nemanjicischema:Osoba.ime ?ktitorIme .
+}
+ORDER BY ?godina

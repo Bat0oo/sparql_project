@@ -1,0 +1,13 @@
+#title: Svi vladari sa titulama sortirani po godini pocetka vladavine
+#comment: Vraca ime, titulu i period vladavine za sve vladare
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?ime ?titula ?od ?do
+WHERE {
+    ?v a nemanjicischema:Vladar ;
+       nemanjicischema:Osoba.ime ?ime ;
+       nemanjicischema:Vladar.titula ?titula ;
+       nemanjicischema:Vladar.vladaoOd ?od ;
+       nemanjicischema:Vladar.vladaoDo ?do .
+}
+ORDER BY ?od

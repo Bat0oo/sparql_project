@@ -1,0 +1,15 @@
+#title: Manastiri sa imenima ktitora i godinom gradnje
+#comment: Spaja Crkva i Vladar da dobije ktitora svakog manastira
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?manastir ?ktitorIme ?godina
+WHERE {
+    ?c a nemanjicischema:Crkva ;
+       nemanjicischema:Crkva.naziv ?manastir ;
+       nemanjicischema:Crkva.tipCrkve ?tip ;
+       nemanjicischema:Crkva.godinaGradnje ?godina ;
+       nemanjicischema:Crkva.ktitor ?ktitor .
+    ?ktitor nemanjicischema:Osoba.ime ?ktitorIme .
+    FILTER (?tip = "Manastir")
+}
+ORDER BY ?godina

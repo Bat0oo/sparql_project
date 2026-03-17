@@ -1,0 +1,16 @@
+#title: Bitke sa godinama lokacijama i pobjednicima
+#comment: OPTIONAL za pobjednika jer neke bitke nemaju pobjednika
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?naziv ?godina ?lokacija ?pobjednikIme
+WHERE {
+    ?b a nemanjicischema:Bitka ;
+       nemanjicischema:Bitka.naziv ?naziv ;
+       nemanjicischema:Bitka.godina ?godina ;
+       nemanjicischema:Bitka.lokacija ?lokacija .
+    OPTIONAL {
+        ?b nemanjicischema:Bitka.pobjednik ?p .
+        ?p nemanjicischema:Osoba.ime ?pobjednikIme .
+    }
+}
+ORDER BY ?godina

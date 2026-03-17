@@ -1,0 +1,13 @@
+#title: Wikidata - Ucesnici Bitke na Kosovu 1389
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?osoba ?ime
+WHERE {
+    ?osoba wdt:P607 wd:Q83413 ;
+           rdfs:label ?ime .
+    FILTER (lang(?ime) = "en")
+}
+ORDER BY ?ime

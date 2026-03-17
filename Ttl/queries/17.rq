@@ -1,0 +1,16 @@
+#title: Wikidata - Srpski vladari sa periodom vladavine
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?vladar ?ime ?pocetak ?kraj
+WHERE {
+    ?vladar wdt:P39 wd:Q219552 ;
+            rdfs:label ?ime .
+    OPTIONAL { ?vladar wdt:P571 ?pocetak }
+    OPTIONAL { ?vladar wdt:P576 ?kraj }
+    FILTER (lang(?ime) = "en")
+}
+ORDER BY ?pocetak
+LIMIT 20

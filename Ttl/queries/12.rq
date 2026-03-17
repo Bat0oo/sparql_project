@@ -1,0 +1,12 @@
+#title: DBpedia - Detalji o Stefanu Dusanu
+#comment: Endpoint: https://dbpedia.org/sparql
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?property ?value
+WHERE {
+    dbr:Stefan_Dusan ?property ?value .
+    FILTER (lang(?value) = "en")
+}
+LIMIT 20

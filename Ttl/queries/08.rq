@@ -1,0 +1,13 @@
+#title: Vladari koji su vladali vise od 2 teritorije - MN relacija
+#comment: Demonstrira M:N relaciju Vladar-Teritorija, koristi HAVING
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?ime (COUNT(?t) AS ?brojTerit)
+WHERE {
+    ?v a nemanjicischema:Vladar ;
+       nemanjicischema:Osoba.ime ?ime ;
+       nemanjicischema:Vladar.vladaoTeritorijom ?t .
+}
+GROUP BY ?ime
+HAVING (COUNT(?t) > 2)
+ORDER BY DESC(?brojTerit)

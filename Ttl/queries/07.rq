@@ -1,0 +1,14 @@
+#title: Pravni dokumenti sa donosiocima
+#comment: Spaja PravniDokument i Vladar
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?naziv ?godina ?opis ?donosilacIme
+WHERE {
+    ?d a nemanjicischema:PravniDokument ;
+       nemanjicischema:PravniDokument.naziv ?naziv ;
+       nemanjicischema:PravniDokument.godinaDonosenja ?godina ;
+       nemanjicischema:PravniDokument.opis ?opis ;
+       nemanjicischema:PravniDokument.donosilac ?v .
+    ?v nemanjicischema:Osoba.ime ?donosilacIme .
+}
+ORDER BY ?godina

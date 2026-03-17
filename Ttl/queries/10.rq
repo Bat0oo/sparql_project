@@ -1,0 +1,14 @@
+#title: Svestenici i manastiri kojima upravljaju
+#comment: OPTIONAL jer svestenik mozda ne upravlja manastirom
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?svName ?funkcija ?manastir
+WHERE {
+    ?s a nemanjicischema:Svestenik ;
+       nemanjicischema:Osoba.ime ?svName ;
+       nemanjicischema:Svestenik.crkvenaFunkcija ?funkcija .
+    OPTIONAL {
+        ?s nemanjicischema:Svestenik.upravljaManastirom ?c .
+        ?c nemanjicischema:Crkva.naziv ?manastir .
+    }
+}

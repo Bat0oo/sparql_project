@@ -1,0 +1,15 @@
+#title: Wikidata - Srpski manastiri na UNESCO listi
+#comment: Endpoint: https://query.wikidata.org/
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?manastir ?ime ?unescoId
+WHERE {
+    ?manastir wdt:P31 wd:Q44613 ;
+              wdt:P17 wd:Q403 ;
+              rdfs:label ?ime .
+    OPTIONAL { ?manastir wdt:P757 ?unescoId }
+    FILTER (lang(?ime) = "en")
+}
+ORDER BY ?ime

@@ -1,0 +1,13 @@
+#title: DBpedia - Clanovi dinastije Nemanjica
+#comment: Endpoint: https://dbpedia.org/sparql
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?osoba ?ime
+WHERE {
+    ?osoba dbo:dynasty dbr:Nemanjic_dynasty ;
+           rdfs:label ?ime .
+    FILTER (lang(?ime) = "en")
+}
+ORDER BY ?ime

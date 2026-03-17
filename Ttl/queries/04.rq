@@ -1,0 +1,13 @@
+#title: Broj izgradenih crkava po vladaru
+#comment: Koristi GROUP BY i COUNT za agregaciju
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?ime (COUNT(?c) AS ?brojCrkava)
+WHERE {
+    ?v a nemanjicischema:Vladar ;
+       nemanjicischema:Osoba.ime ?ime .
+    ?c a nemanjicischema:Crkva ;
+       nemanjicischema:Crkva.ktitor ?v .
+}
+GROUP BY ?ime
+ORDER BY DESC(?brojCrkava)

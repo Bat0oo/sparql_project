@@ -1,0 +1,17 @@
+#title: DBpedia - Srednjovjekovne bitke u Srbiji
+#comment: Endpoint: https://dbpedia.org/sparql
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?bitka ?ime ?godina
+WHERE {
+    ?bitka a dbo:MilitaryConflict ;
+           rdfs:label ?ime ;
+           dbo:date ?datum .
+    ?bitka dct:subject <http://dbpedia.org/resource/Category:Medieval_Serbia> .
+    BIND(YEAR(?datum) AS ?godina)
+    FILTER (lang(?ime) = "en")
+}
+ORDER BY ?godina
+LIMIT 15

@@ -1,0 +1,12 @@
+#title: Lanac nasljedjivanja vladara
+#comment: Vraca parove vladar-nasljednik
+PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
+
+SELECT ?vladarIme ?nasljednikIme
+WHERE {
+    ?v a nemanjicischema:Vladar ;
+       nemanjicischema:Osoba.ime ?vladarIme ;
+       nemanjicischema:Vladar.nasljednik ?n .
+    ?n nemanjicischema:Osoba.ime ?nasljednikIme .
+}
+ORDER BY ?vladarIme
