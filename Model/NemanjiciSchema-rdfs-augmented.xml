@@ -1,541 +1,552 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
-         xmlns:uml="http://langdale.com.au/2005/UML#"
-         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-         xml:base="http://nemanjici.ontologija.sr">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#" xmlns:uml="http://langdale.com.au/2005/UML#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="http://iec.ch/TC57/NemanjiciSchema">
 
-  <rdf:Description rdf:about="#TipVladara">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#TipVladara</rdfs:label>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipVladara.Car">
-    <rdf:type rdf:resource="#TipVladara"/>
-    <rdfs:label>Car</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipVladara.Despot">
-    <rdf:type rdf:resource="#TipVladara"/>
-    <rdfs:label>Despot</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipVladara.Knez">
-    <rdf:type rdf:resource="#TipVladara"/>
-    <rdfs:label>Knez</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipVladara.Kralj">
-    <rdf:type rdf:resource="#TipVladara"/>
-    <rdfs:label>Kralj</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipVladara.VelikaZupan">
-    <rdf:type rdf:resource="#TipVladara"/>
-    <rdfs:label>VelikaZupan</rdfs:label>
-  </rdf:Description>
+	<!-- ENUMERACIJA: TipVladara -->
+	<rdf:Description rdf:about="#TipVladara">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#TipVladara</rdfs:label>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipVladara.Car">
+		<rdf:type rdf:resource="#TipVladara"/>
+		<rdfs:label>Car</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipVladara.Despot">
+		<rdf:type rdf:resource="#TipVladara"/>
+		<rdfs:label>Despot</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipVladara.Knez">
+		<rdf:type rdf:resource="#TipVladara"/>
+		<rdfs:label>Knez</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipVladara.Kralj">
+		<rdf:type rdf:resource="#TipVladara"/>
+		<rdfs:label>Kralj</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipVladara.VelikaZupan">
+		<rdf:type rdf:resource="#TipVladara"/>
+		<rdfs:label>VelikaZupan</rdfs:label>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#TipTeritorije">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#TipTeritorije</rdfs:label>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipTeritorije.Carstvo">
-    <rdf:type rdf:resource="#TipTeritorije"/>
-    <rdfs:label>Carstvo</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipTeritorije.Kraljevina">
-    <rdf:type rdf:resource="#TipTeritorije"/>
-    <rdfs:label>Kraljevina</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipTeritorije.Oblast">
-    <rdf:type rdf:resource="#TipTeritorije"/>
-    <rdfs:label>Oblast</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipTeritorije.Zupa">
-    <rdf:type rdf:resource="#TipTeritorije"/>
-    <rdfs:label>Zupa</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipTeritorije.Zupanija">
-    <rdf:type rdf:resource="#TipTeritorije"/>
-    <rdfs:label>Zupanija</rdfs:label>
-  </rdf:Description>
+	<!-- ENUMERACIJA: TipTeritorije -->
+	<rdf:Description rdf:about="#TipTeritorije">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#TipTeritorije</rdfs:label>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipTeritorije.Carstvo">
+		<rdf:type rdf:resource="#TipTeritorije"/>
+		<rdfs:label>Carstvo</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipTeritorije.Kraljevina">
+		<rdf:type rdf:resource="#TipTeritorije"/>
+		<rdfs:label>Kraljevina</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipTeritorije.Oblast">
+		<rdf:type rdf:resource="#TipTeritorije"/>
+		<rdfs:label>Oblast</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipTeritorije.Zupa">
+		<rdf:type rdf:resource="#TipTeritorije"/>
+		<rdfs:label>Zupa</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipTeritorije.Zupanija">
+		<rdf:type rdf:resource="#TipTeritorije"/>
+		<rdfs:label>Zupanija</rdfs:label>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#TipCrkve">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#TipCrkve</rdfs:label>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipCrkve.Crkva">
-    <rdf:type rdf:resource="#TipCrkve"/>
-    <rdfs:label>Crkva</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#TipCrkve.Manastir">
-    <rdf:type rdf:resource="#TipCrkve"/>
-    <rdfs:label>Manastir</rdfs:label>
-  </rdf:Description>
+	<!-- ENUMERACIJA: TipCrkve -->
+	<rdf:Description rdf:about="#TipCrkve">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#TipCrkve</rdfs:label>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipCrkve.Crkva">
+		<rdf:type rdf:resource="#TipCrkve"/>
+		<rdfs:label>Crkva</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#TipCrkve.Manastir">
+		<rdf:type rdf:resource="#TipCrkve"/>
+		<rdfs:label>Manastir</rdfs:label>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Osoba">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Osoba</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Osoba.ime">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>ime</rdfs:label>
-    <rdfs:domain rdf:resource="#Osoba"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Osoba.godinaRodjenja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaRodjenja</rdfs:label>
-    <rdfs:domain rdf:resource="#Osoba"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Osoba.godinaSmrti">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaSmrti</rdfs:label>
-    <rdfs:domain rdf:resource="#Osoba"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
+	<!-- KLASA: Osoba -->
+	<rdf:Description rdf:about="#Osoba">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Osoba</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Osoba.ime">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>ime</rdfs:label>
+		<rdfs:domain rdf:resource="#Osoba"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Osoba.godinaRodjenja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaRodjenja</rdfs:label>
+		<rdfs:domain rdf:resource="#Osoba"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Osoba.godinaSmrti">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaSmrti</rdfs:label>
+		<rdfs:domain rdf:resource="#Osoba"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Vladar">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Vladar</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Osoba"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.titula">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>titula</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <rdfs:range rdf:resource="#TipVladara"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.vladaoOd">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladaoOd</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.vladaoDo">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladaoDo</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.nasljednik">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>nasljednik</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.vladaoTeritorijom">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladaoTeritorijom</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <rdfs:range rdf:resource="#Teritorija"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-    <cims:inverseRoleName rdf:resource="#Teritorija.vladao"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.vladaoDrzavom">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladaoDrzavom</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <rdfs:range rdf:resource="#Drzava"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-    <cims:inverseRoleName rdf:resource="#Drzava.vladari"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.ucestvovaoUBitki">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>ucestvovaoUBitki</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <rdfs:range rdf:resource="#Bitka"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-    <cims:inverseRoleName rdf:resource="#Bitka.ucestvovao"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Vladar.izgradioManastir">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>izgradioManastir</rdfs:label>
-    <rdfs:domain rdf:resource="#Vladar"/>
-    <rdfs:range rdf:resource="#Crkva"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-    <cims:inverseRoleName rdf:resource="#Crkva.ktitor"/>
-  </rdf:Description>
+	<!-- KLASA: Vladar -->
+	<rdf:Description rdf:about="#Vladar">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Vladar</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Osoba"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.titula">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>titula</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<rdfs:range rdf:resource="#TipVladara"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.vladaoOd">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladaoOd</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.vladaoDo">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladaoDo</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.nasljednik">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>nasljednik</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.vladaoTeritorijom">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladaoTeritorijom</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<rdfs:range rdf:resource="#Teritorija"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+		<cims:inverseRoleName rdf:resource="#Teritorija.vladao"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.vladaoDrzavom">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladaoDrzavom</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<rdfs:range rdf:resource="#Drzava"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+		<cims:inverseRoleName rdf:resource="#Drzava.vladari"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.ucestvovaoUBitki">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>ucestvovaoUBitki</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<rdfs:range rdf:resource="#Bitka"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+		<cims:inverseRoleName rdf:resource="#Bitka.ucestvovao"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Vladar.izgradioManastir">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>izgradioManastir</rdfs:label>
+		<rdfs:domain rdf:resource="#Vladar"/>
+		<rdfs:range rdf:resource="#Crkva"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+		<cims:inverseRoleName rdf:resource="#Crkva.ktitor"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Svestenik">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Svestenik</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Osoba"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Svestenik.crkvenaFunkcija">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>crkvenaFunkcija</rdfs:label>
-    <rdfs:domain rdf:resource="#Svestenik"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Svestenik.upravljaManastirom">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>upravljaManastirom</rdfs:label>
-    <rdfs:domain rdf:resource="#Svestenik"/>
-    <rdfs:range rdf:resource="#Crkva"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-    <cims:inverseRoleName rdf:resource="#Crkva.upravnik"/>
-  </rdf:Description>
+	<!-- KLASA: Svestenik -->
+	<rdf:Description rdf:about="#Svestenik">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Svestenik</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Osoba"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Svestenik.crkvenaFunkcija">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>crkvenaFunkcija</rdfs:label>
+		<rdfs:domain rdf:resource="#Svestenik"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Svestenik.upravljaManastirom">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>upravljaManastirom</rdfs:label>
+		<rdfs:domain rdf:resource="#Svestenik"/>
+		<rdfs:range rdf:resource="#Crkva"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+		<cims:inverseRoleName rdf:resource="#Crkva.upravnik"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Plemic">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Plemic</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#Osoba"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Plemic.zvanje">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>zvanje</rdfs:label>
-    <rdfs:domain rdf:resource="#Plemic"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Plemic.upravljaTeritorijom">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>upravljaTeritorijom</rdfs:label>
-    <rdfs:domain rdf:resource="#Plemic"/>
-    <rdfs:range rdf:resource="#Teritorija"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-  </rdf:Description>
+	<!-- KLASA: Plemic -->
+	<rdf:Description rdf:about="#Plemic">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Plemic</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#Osoba"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Plemic.zvanje">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>zvanje</rdfs:label>
+		<rdfs:domain rdf:resource="#Plemic"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Plemic.upravljaTeritorijom">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>upravljaTeritorijom</rdfs:label>
+		<rdfs:domain rdf:resource="#Plemic"/>
+		<rdfs:range rdf:resource="#Teritorija"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Dinastija">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Dinastija</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Dinastija.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Dinastija"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Dinastija.godinaOsnivanja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaOsnivanja</rdfs:label>
-    <rdfs:domain rdf:resource="#Dinastija"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Dinastija.godinaGasenja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaGasenja</rdfs:label>
-    <rdfs:domain rdf:resource="#Dinastija"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Dinastija.osnivac">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>osnivac</rdfs:label>
-    <rdfs:domain rdf:resource="#Dinastija"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-  </rdf:Description>
+	<!-- KLASA: Dinastija -->
+	<rdf:Description rdf:about="#Dinastija">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Dinastija</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Dinastija.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Dinastija"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Dinastija.godinaOsnivanja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaOsnivanja</rdfs:label>
+		<rdfs:domain rdf:resource="#Dinastija"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Dinastija.godinaGasenja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaGasenja</rdfs:label>
+		<rdfs:domain rdf:resource="#Dinastija"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Dinastija.osnivac">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>osnivac</rdfs:label>
+		<rdfs:domain rdf:resource="#Dinastija"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Drzava">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Drzava</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Drzava.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Drzava"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Drzava.tipTeritorije">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>tipTeritorije</rdfs:label>
-    <rdfs:domain rdf:resource="#Drzava"/>
-    <rdfs:range rdf:resource="#TipTeritorije"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Drzava.godinaOsnivanja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaOsnivanja</rdfs:label>
-    <rdfs:domain rdf:resource="#Drzava"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Drzava.vladajucaDinastija">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladajucaDinastija</rdfs:label>
-    <rdfs:domain rdf:resource="#Drzava"/>
-    <rdfs:range rdf:resource="#Dinastija"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Drzava.vladari">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladari</rdfs:label>
-    <rdfs:domain rdf:resource="#Drzava"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-    <cims:inverseRoleName rdf:resource="#Vladar.vladaoDrzavom"/>
-  </rdf:Description>
+	<!-- KLASA: Drzava -->
+	<rdf:Description rdf:about="#Drzava">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Drzava</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Drzava.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Drzava"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Drzava.tipTeritorije">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>tipTeritorije</rdfs:label>
+		<rdfs:domain rdf:resource="#Drzava"/>
+		<rdfs:range rdf:resource="#TipTeritorije"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Drzava.godinaOsnivanja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaOsnivanja</rdfs:label>
+		<rdfs:domain rdf:resource="#Drzava"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Drzava.vladajucaDinastija">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladajucaDinastija</rdfs:label>
+		<rdfs:domain rdf:resource="#Drzava"/>
+		<rdfs:range rdf:resource="#Dinastija"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Drzava.vladari">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladari</rdfs:label>
+		<rdfs:domain rdf:resource="#Drzava"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+		<cims:inverseRoleName rdf:resource="#Vladar.vladaoDrzavom"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Teritorija">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Teritorija</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Teritorija.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Teritorija"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Teritorija.tipTeritorije">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>tipTeritorije</rdfs:label>
-    <rdfs:domain rdf:resource="#Teritorija"/>
-    <rdfs:range rdf:resource="#TipTeritorije"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Teritorija.dioOd">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>dioOd</rdfs:label>
-    <rdfs:domain rdf:resource="#Teritorija"/>
-    <rdfs:range rdf:resource="#Drzava"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Teritorija.vladao">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>vladao</rdfs:label>
-    <rdfs:domain rdf:resource="#Teritorija"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-    <cims:inverseRoleName rdf:resource="#Vladar.vladaoTeritorijom"/>
-  </rdf:Description>
+	<!-- KLASA: Teritorija -->
+	<rdf:Description rdf:about="#Teritorija">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Teritorija</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Teritorija.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Teritorija"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Teritorija.tipTeritorije">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>tipTeritorije</rdfs:label>
+		<rdfs:domain rdf:resource="#Teritorija"/>
+		<rdfs:range rdf:resource="#TipTeritorije"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Teritorija.dioOd">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>dioOd</rdfs:label>
+		<rdfs:domain rdf:resource="#Teritorija"/>
+		<rdfs:range rdf:resource="#Drzava"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Teritorija.vladao">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>vladao</rdfs:label>
+		<rdfs:domain rdf:resource="#Teritorija"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+		<cims:inverseRoleName rdf:resource="#Vladar.vladaoTeritorijom"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Bitka">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Bitka</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Bitka.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Bitka"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Bitka.godina">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godina</rdfs:label>
-    <rdfs:domain rdf:resource="#Bitka"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Bitka.lokacija">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>lokacija</rdfs:label>
-    <rdfs:domain rdf:resource="#Bitka"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Bitka.pobjednik">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>pobjednik</rdfs:label>
-    <rdfs:domain rdf:resource="#Bitka"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Bitka.ucestvovao">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>ucestvovao</rdfs:label>
-    <rdfs:domain rdf:resource="#Bitka"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-    <cims:inverseRoleName rdf:resource="#Vladar.ucestvovaoUBitki"/>
-  </rdf:Description>
+	<!-- KLASA: Bitka -->
+	<rdf:Description rdf:about="#Bitka">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Bitka</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Bitka.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Bitka"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Bitka.godina">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godina</rdfs:label>
+		<rdfs:domain rdf:resource="#Bitka"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Bitka.lokacija">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>lokacija</rdfs:label>
+		<rdfs:domain rdf:resource="#Bitka"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Bitka.pobjednik">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>pobjednik</rdfs:label>
+		<rdfs:domain rdf:resource="#Bitka"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Bitka.ucestvovao">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>ucestvovao</rdfs:label>
+		<rdfs:domain rdf:resource="#Bitka"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+		<cims:inverseRoleName rdf:resource="#Vladar.ucestvovaoUBitki"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#PravniDokument">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#PravniDokument</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#PravniDokument.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#PravniDokument"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#PravniDokument.godinaDonosenja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaDonosenja</rdfs:label>
-    <rdfs:domain rdf:resource="#PravniDokument"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#PravniDokument.opis">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>opis</rdfs:label>
-    <rdfs:domain rdf:resource="#PravniDokument"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#PravniDokument.donosilac">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>donosilac</rdfs:label>
-    <rdfs:domain rdf:resource="#PravniDokument"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-  </rdf:Description>
+	<!-- KLASA: PravniDokument -->
+	<rdf:Description rdf:about="#PravniDokument">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#PravniDokument</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#PravniDokument.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#PravniDokument"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#PravniDokument.godinaDonosenja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaDonosenja</rdfs:label>
+		<rdfs:domain rdf:resource="#PravniDokument"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#PravniDokument.opis">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>opis</rdfs:label>
+		<rdfs:domain rdf:resource="#PravniDokument"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#PravniDokument.donosilac">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>donosilac</rdfs:label>
+		<rdfs:domain rdf:resource="#PravniDokument"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Ugovor">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Ugovor</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Ugovor.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Ugovor"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Ugovor.godinaSklapanja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaSklapanja</rdfs:label>
-    <rdfs:domain rdf:resource="#Ugovor"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Ugovor.potpisnik">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>potpisnik</rdfs:label>
-    <rdfs:domain rdf:resource="#Ugovor"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-  </rdf:Description>
+	<!-- KLASA: Ugovor -->
+	<rdf:Description rdf:about="#Ugovor">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Ugovor</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Ugovor.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Ugovor"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Ugovor.godinaSklapanja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaSklapanja</rdfs:label>
+		<rdfs:domain rdf:resource="#Ugovor"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Ugovor.potpisnik">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>potpisnik</rdfs:label>
+		<rdfs:domain rdf:resource="#Ugovor"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Crkva">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Crkva</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Crkva.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Crkva"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Crkva.tipCrkve">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>tipCrkve</rdfs:label>
-    <rdfs:domain rdf:resource="#Crkva"/>
-    <rdfs:range rdf:resource="#TipCrkve"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Crkva.godinaGradnje">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaGradnje</rdfs:label>
-    <rdfs:domain rdf:resource="#Crkva"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Crkva.ktitor">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>ktitor</rdfs:label>
-    <rdfs:domain rdf:resource="#Crkva"/>
-    <rdfs:range rdf:resource="#Vladar"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:inverseRoleName rdf:resource="#Vladar.izgradioManastir"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Crkva.lokacija">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>lokacija</rdfs:label>
-    <rdfs:domain rdf:resource="#Crkva"/>
-    <rdfs:range rdf:resource="#Teritorija"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Crkva.upravnik">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>upravnik</rdfs:label>
-    <rdfs:domain rdf:resource="#Crkva"/>
-    <rdfs:range rdf:resource="#Svestenik"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-    <cims:inverseRoleName rdf:resource="#Svestenik.upravljaManastirom"/>
-  </rdf:Description>
+	<!-- KLASA: Crkva -->
+	<rdf:Description rdf:about="#Crkva">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Crkva</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Crkva.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Crkva"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Crkva.tipCrkve">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>tipCrkve</rdfs:label>
+		<rdfs:domain rdf:resource="#Crkva"/>
+		<rdfs:range rdf:resource="#TipCrkve"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Crkva.godinaGradnje">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaGradnje</rdfs:label>
+		<rdfs:domain rdf:resource="#Crkva"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Crkva.ktitor">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>ktitor</rdfs:label>
+		<rdfs:domain rdf:resource="#Crkva"/>
+		<rdfs:range rdf:resource="#Vladar"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:inverseRoleName rdf:resource="#Vladar.izgradioManastir"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Crkva.lokacija">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>lokacija</rdfs:label>
+		<rdfs:domain rdf:resource="#Crkva"/>
+		<rdfs:range rdf:resource="#Teritorija"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Crkva.upravnik">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>upravnik</rdfs:label>
+		<rdfs:domain rdf:resource="#Crkva"/>
+		<rdfs:range rdf:resource="#Svestenik"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+		<cims:inverseRoleName rdf:resource="#Svestenik.upravljaManastirom"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="#Grad">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>#Grad</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Grad.naziv">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>naziv</rdfs:label>
-    <rdfs:domain rdf:resource="#Grad"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Grad.godinaOsnivanja">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>godinaOsnivanja</rdfs:label>
-    <rdfs:domain rdf:resource="#Grad"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Grad.jePrestonica">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>jePrestonica</rdfs:label>
-    <rdfs:domain rdf:resource="#Grad"/>
-    <cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-    <cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Grad.teritorija">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:label>teritorija</rdfs:label>
-    <rdfs:domain rdf:resource="#Grad"/>
-    <rdfs:range rdf:resource="#Teritorija"/>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
-  </rdf:Description>
+	<!-- KLASA: Grad -->
+	<rdf:Description rdf:about="#Grad">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>#Grad</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Grad.naziv">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>naziv</rdfs:label>
+		<rdfs:domain rdf:resource="#Grad"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Grad.godinaOsnivanja">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>godinaOsnivanja</rdfs:label>
+		<rdfs:domain rdf:resource="#Grad"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Grad.jePrestonica">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>jePrestonica</rdfs:label>
+		<rdfs:domain rdf:resource="#Grad"/>
+		<cims:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+		<cims:stereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="#Grad.teritorija">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdfs:label>teritorija</rdfs:label>
+		<rdfs:domain rdf:resource="#Grad"/>
+		<rdfs:range rdf:resource="#Teritorija"/>
+		<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+	</rdf:Description>
 
-  <rdf:Description rdf:about="TipVladara">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>TipVladara</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="TipTeritorije">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>TipTeritorije</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="TipCrkve">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>TipCrkve</rdfs:label>
-  </rdf:Description>
+	<!-- Enum duplikati (kao u Garden projektu) -->
+	<rdf:Description rdf:about="TipVladara">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>TipVladara</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="TipTeritorije">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>TipTeritorije</rdfs:label>
+	</rdf:Description>
+	<rdf:Description rdf:about="TipCrkve">
+		<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+		<rdfs:label>TipCrkve</rdfs:label>
+	</rdf:Description>
 
 </rdf:RDF>
