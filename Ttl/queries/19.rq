@@ -1,12 +1,31 @@
-#title: Wikidata - Detalji o Svetom Savi
-#comment: Endpoint: https://query.wikidata.org/
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?property ?value
+SELECT ?svojstvo ?vrijednost
 WHERE {
     ?sveti rdfs:label "Saint Sava"@en .
-    VALUES ?property { wdt:P569 wdt:P570 wdt:P27 wdt:P106 wdt:P22 wdt:P19 }
-    ?sveti ?property ?value .
+    {
+        BIND("mjesto rodjenja" AS ?svojstvo)
+        ?sveti wdt:P19 ?v . ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost)="en")
+    } UNION {
+        BIND("otac" AS ?svojstvo)
+        ?sveti wdt:P22 ?v . ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost)="en")
+    } UNION {
+        BIND("drzavljanstvo" AS ?svojstvo)
+        ?sveti wdt:P27 ?v . ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost)="en")
+    } UNION {
+        BIND("zanimanje" AS ?svojstvo)
+        ?sveti wdt:P106 ?v . ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost)="en")
+    } UNION {
+        BIND("datum rodjenja" AS ?svojstvo)
+        ?sveti wdt:P569 ?vrijednost .
+    } UNION {
+        BIND("datum smrti" AS ?svojstvo)
+        ?sveti wdt:P570 ?vrijednost .
+    }
 }
-LIMIT 15
