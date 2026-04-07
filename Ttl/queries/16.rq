@@ -1,17 +1,15 @@
 #title: Wikidata - Clanovi dinastije Nemanjica
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT ?osoba ?ime ?rodjenGodina
+SELECT DISTINCT ?osoba ?ime ?rodjenGodina
 WHERE {
-    ?osoba wdt:P53 wd:Q208188 ;
+    ?dinastija rdfs:label ?dynLabel .
+    FILTER(CONTAINS(LCASE(STR(?dynLabel)), "nemanj") && lang(?dynLabel) = "en")
+    ?osoba wdt:P53 ?dinastija ;
            rdfs:label ?ime .
-    OPTIONAL {
-        ?osoba wdt:P569 ?rodjenje .
-        BIND(YEAR(?rodjenje) AS ?rodjenGodina)
-    }
+    OPTIONAL { ?osoba wdt:P569 ?r . BIND(YEAR(?r) AS ?rodjenGodina) }
     FILTER (lang(?ime) = "en")
 }
 ORDER BY ?rodjenGodina

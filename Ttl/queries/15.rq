@@ -7,10 +7,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?drzava ?ime ?pocetak ?kraj
 WHERE {
     ?drzava wdt:P31 wd:Q3024240 ;
-            rdfs:label ?ime .
+            rdfs:label ?ime ;
+            wdt:P17 wd:Q403 .
     OPTIONAL { ?drzava wdt:P571 ?pocetak }
     OPTIONAL { ?drzava wdt:P576 ?kraj }
-    ?drzava wdt:P17 wd:Q403 .
     FILTER (lang(?ime) = "en")
 }
 ORDER BY ?pocetak

@@ -1,5 +1,5 @@
 #title: Svestenici i manastiri kojima upravljaju
-#comment: OPTIONAL jer svestenik mozda ne upravlja manastirom
+#comment: OPTIONAL jer svestenik ne mora upravljati manastirom
 PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
 
 SELECT ?svName ?funkcija ?manastir
