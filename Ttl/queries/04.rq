@@ -1,5 +1,5 @@
 #title: Broj izgradenih crkava po vladaru
-#comment: Koristi GROUP BY i COUNT za agregaciju
+#comment: Koristi GROUP BY i COUNT agregaciju
 PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
 
 SELECT ?ime (COUNT(?c) AS ?brojCrkava)

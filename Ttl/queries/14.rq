@@ -1,14 +1,16 @@
 #title: Wikidata - Djeca Stefana Nemanje
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
 
 SELECT ?dijete ?ime ?rodjenje
 WHERE {
-    ?dijete wdt:P22 wd:Q183180 ;
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+    ?stefan rdfs:label "Stefan Nemanja"@en .
+    ?dijete wdt:P22 ?stefan ;
             rdfs:label ?ime .
     OPTIONAL { ?dijete wdt:P569 ?rodjenje }
     FILTER (lang(?ime) = "en")
 }
-ORDER BY ?rodjenje

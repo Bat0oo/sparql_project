@@ -2,15 +2,22 @@
 #comment: Endpoint: https://query.wikidata.org/
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?vladar ?ime ?pocetak ?kraj
 WHERE {
-    ?vladar wdt:P39 wd:Q219552 ;
-            rdfs:label ?ime .
-    OPTIONAL { ?vladar wdt:P571 ?pocetak }
-    OPTIONAL { ?vladar wdt:P576 ?kraj }
+    VALUES ?vladar {
+        wd:Q24445 wd:Q355911 wd:Q346960 wd:Q73810
+        wd:Q290786 wd:Q319597 wd:Q314346 wd:Q152419
+    }
+    ?vladar p:P39 ?stmt .
+    ?stmt ps:P39 ?pozicija .
+    OPTIONAL { ?stmt pq:P580 ?pocetak }
+    OPTIONAL { ?stmt pq:P582 ?kraj }
+    ?vladar rdfs:label ?ime .
     FILTER (lang(?ime) = "en")
 }
 ORDER BY ?pocetak
-LIMIT 20

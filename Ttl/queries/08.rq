@@ -1,5 +1,5 @@
 #title: Vladari koji su vladali vise od 2 teritorije - MN relacija
-#comment: Demonstrira M:N relaciju Vladar-Teritorija, koristi HAVING
+#comment: Demonstrira M:N relaciju. Koristi GROUP BY i HAVING
 PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
 
 SELECT ?ime (COUNT(?t) AS ?brojTerit)

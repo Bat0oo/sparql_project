@@ -1,5 +1,5 @@
 #title: Crkve na Kosovu sa ktitorima
-#comment: Filtrira crkve po lokaciji Kosovo
+#comment: Filtrira crkve po specificnoj lokaciji ter_kosovo
 PREFIX nemanjicischema: <http://iec.ch/TC57/NemanjiciSchema#>
 
 SELECT ?crkvaNaziv ?ktitorIme ?godina
