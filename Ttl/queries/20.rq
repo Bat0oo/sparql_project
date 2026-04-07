@@ -1,9 +1,7 @@
-#title: Wikidata - Srpski ucesnici Bitke na Kosovu 1389
-#comment: Endpoint: https://query.wikidata.org/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT ?osoba ?ime
+SELECT DISTINCT ?ime
 WHERE {
     ?bitka rdfs:label "Battle of Kosovo"@en .
     ?osoba wdt:P607 ?bitka ;
