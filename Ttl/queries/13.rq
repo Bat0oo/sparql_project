@@ -1,18 +1,20 @@
-#title: Wikidata - Bitke u kojima je ucestvovala Srbija
+#title: Wikidata - Bitke u kojima je ucestvovala Srbija (1166-1371)
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?bitka ?ime ?datum
+SELECT DISTINCT ?ime ?datum
 WHERE {
     ?bitka wdt:P31 wd:Q178561 ;
            rdfs:label ?ime .
+    FILTER(lang(?ime) = "en")
     { ?bitka wdt:P710 ?ucesnik . ?ucesnik wdt:P17 wd:Q403 . }
     UNION
     { ?bitka wdt:P17 wd:Q403 }
     OPTIONAL { ?bitka wdt:P585 ?datum }
-    FILTER (lang(?ime) = "en")
+    FILTER(!BOUND(?datum) || (?datum >= "1166-01-01"^^xsd:dateTime && ?datum <= "1371-12-31"^^xsd:dateTime))
 }
 ORDER BY ?datum
 LIMIT 20

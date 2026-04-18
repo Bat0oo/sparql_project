@@ -1,17 +1,19 @@
-#title: Wikidata - Srpske srednjovjekovne drzave
+#title: Wikidata - Srpske drzave iz perioda Nemanjica
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?drzava ?ime ?pocetak ?kraj
+SELECT DISTINCT ?ime ?pocetak ?kraj
 WHERE {
     ?drzava wdt:P31 wd:Q3024240 ;
-            rdfs:label ?ime ;
-            wdt:P17 wd:Q403 .
+            wdt:P17 wd:Q403 ;
+            rdfs:label ?ime .
+    FILTER(lang(?ime) = "en")
     OPTIONAL { ?drzava wdt:P571 ?pocetak }
     OPTIONAL { ?drzava wdt:P576 ?kraj }
-    FILTER (lang(?ime) = "en")
+    FILTER(!BOUND(?pocetak) || (?pocetak >= "1100-01-01"^^xsd:dateTime && ?pocetak <= "1400-01-01"^^xsd:dateTime))
 }
 ORDER BY ?pocetak
 LIMIT 20

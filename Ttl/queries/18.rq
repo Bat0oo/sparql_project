@@ -1,15 +1,21 @@
-#title: Wikidata - Srpski manastiri na UNESCO listi
+#title: Wikidata - Srpski manastiri na UNESCO listi iz perioda Nemanjica
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?manastir ?ime ?unescoId
+SELECT DISTINCT ?ime ?unescoId ?godinaGradnje
 WHERE {
     ?manastir wdt:P31 wd:Q44613 ;
               wdt:P17 wd:Q403 ;
               rdfs:label ?ime .
+    FILTER(lang(?ime) = "en")
     OPTIONAL { ?manastir wdt:P757 ?unescoId }
-    FILTER (lang(?ime) = "en")
+    OPTIONAL {
+        ?manastir wdt:P571 ?datum .
+        BIND(YEAR(?datum) AS ?godinaGradnje)
+    }
+    FILTER(!BOUND(?datum) || (?datum >= "1166-01-01"^^xsd:dateTime && ?datum <= "1371-12-31"^^xsd:dateTime))
 }
-ORDER BY ?ime
+ORDER BY ?godinaGradnje

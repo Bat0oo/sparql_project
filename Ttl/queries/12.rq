@@ -1,19 +1,21 @@
-#title: Wikidata - Srpski vladari iz srednjeg vijeka
+#title: Wikidata - Srpski vladari iz perioda Nemanjica (1166-1371)
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?vladar ?ime ?rodjenje ?smrt
+SELECT DISTINCT ?ime ?rodjenje ?smrt
 WHERE {
     ?vladar wdt:P31 wd:Q5 ;
             wdt:P27 wd:Q403 ;
             wdt:P39 ?pozicija ;
             rdfs:label ?ime .
     ?pozicija wdt:P31*/wdt:P279* wd:Q116 .
+    FILTER(lang(?ime) = "en")
     OPTIONAL { ?vladar wdt:P569 ?rodjenje }
     OPTIONAL { ?vladar wdt:P570 ?smrt }
-    FILTER (lang(?ime) = "en")
+    FILTER(!BOUND(?rodjenje) || (?rodjenje >= "1100-01-01"^^xsd:dateTime && ?rodjenje <= "1371-12-31"^^xsd:dateTime))
 }
 ORDER BY ?rodjenje
 LIMIT 20

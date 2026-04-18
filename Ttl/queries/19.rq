@@ -1,31 +1,36 @@
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+#title: Wikidata - Detalji o Svetom Savi
+#comment: Endpoint: https://query.wikidata.org/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 
 SELECT ?svojstvo ?vrijednost
 WHERE {
     ?sveti rdfs:label "Saint Sava"@en .
     {
-        BIND("mjesto rodjenja" AS ?svojstvo)
-        ?sveti wdt:P19 ?v . ?v rdfs:label ?vrijednost .
-        FILTER(lang(?vrijednost)="en")
+        BIND("Mjesto rodjenja" AS ?svojstvo)
+        ?sveti wdt:P19 ?v .
+        ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost) = "en")
     } UNION {
-        BIND("otac" AS ?svojstvo)
-        ?sveti wdt:P22 ?v . ?v rdfs:label ?vrijednost .
-        FILTER(lang(?vrijednost)="en")
+        BIND("Otac" AS ?svojstvo)
+        ?sveti wdt:P22 ?v .
+        ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost) = "en")
     } UNION {
-        BIND("drzavljanstvo" AS ?svojstvo)
-        ?sveti wdt:P27 ?v . ?v rdfs:label ?vrijednost .
-        FILTER(lang(?vrijednost)="en")
+        BIND("Drzavljanstvo" AS ?svojstvo)
+        ?sveti wdt:P27 ?v .
+        ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost) = "en")
     } UNION {
-        BIND("zanimanje" AS ?svojstvo)
-        ?sveti wdt:P106 ?v . ?v rdfs:label ?vrijednost .
-        FILTER(lang(?vrijednost)="en")
+        BIND("Zanimanje" AS ?svojstvo)
+        ?sveti wdt:P106 ?v .
+        ?v rdfs:label ?vrijednost .
+        FILTER(lang(?vrijednost) = "en")
     } UNION {
-        BIND("datum rodjenja" AS ?svojstvo)
+        BIND("Datum rodjenja" AS ?svojstvo)
         ?sveti wdt:P569 ?vrijednost .
     } UNION {
-        BIND("datum smrti" AS ?svojstvo)
+        BIND("Datum smrti" AS ?svojstvo)
         ?sveti wdt:P570 ?vrijednost .
     }
 }

@@ -1,5 +1,7 @@
+#title: Wikidata - Srpski ucesnici Bitke na Kosovu 1389
+#comment: Endpoint: https://query.wikidata.org/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 
 SELECT DISTINCT ?ime
 WHERE {
@@ -7,8 +9,8 @@ WHERE {
     ?osoba wdt:P607 ?bitka ;
            wdt:P27 ?drzava ;
            rdfs:label ?ime .
+    FILTER(lang(?ime) = "en")
     ?drzava rdfs:label ?drzavaNaziv .
     FILTER(CONTAINS(LCASE(STR(?drzavaNaziv)), "serbia") && lang(?drzavaNaziv) = "en")
-    FILTER (lang(?ime) = "en")
 }
 ORDER BY ?ime

@@ -1,20 +1,20 @@
 #title: Wikidata - Osnivaci srpskih manastira
 #comment: Endpoint: https://query.wikidata.org/
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?manastir ?manastirIme ?osnivacIme
+SELECT DISTINCT ?manastirIme ?osnivacIme
 WHERE {
     ?manastir wdt:P31 wd:Q44613 ;
               wdt:P17 wd:Q403 ;
               rdfs:label ?manastirIme .
+    FILTER(lang(?manastirIme) = "en")
     OPTIONAL {
         ?manastir wdt:P112 ?osnivac .
         ?osnivac rdfs:label ?osnivacIme .
-        FILTER (lang(?osnivacIme) = "en")
+        FILTER(lang(?osnivacIme) = "en")
     }
-    FILTER (lang(?manastirIme) = "en")
 }
 ORDER BY ?manastirIme
 LIMIT 20
